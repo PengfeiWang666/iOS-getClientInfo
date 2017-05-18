@@ -28,7 +28,7 @@
     }
     
     for (int i=0; i<self.length; i++) {
-        crc = (crc >> 8) ^ table[crc & 0xff ^ bytes[i]];
+        crc = (crc >> 8) ^ table[(crc & 0xff) ^ bytes[i]];
     }
     crc ^= 0xffffffff;
     
