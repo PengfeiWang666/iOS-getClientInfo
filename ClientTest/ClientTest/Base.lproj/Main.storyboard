@@ -40,26 +40,75 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="C5n-bo-sj6">
                                 <rect key="frame" x="56" y="164" width="263" height="403"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4e-Vm-PKT">
-                                        <rect key="frame" x="0.0" y="0.0" width="263" height="201.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <state key="normal" title="Basic Info">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="basicInfoButtonTapped:" destination="hd4-yH-mMf" eventType="touchUpInside" id="W5l-OU-Yus"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QiQ-Gs-JKb">
-                                        <rect key="frame" x="0.0" y="201.5" width="263" height="201.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <state key="normal" title="Battery About">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="batteryInfoButtonTapped:" destination="hd4-yH-mMf" eventType="touchUpInside" id="ESE-qa-Opw"/>
-                                        </connections>
-                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b4h-JV-cQP">
+                                        <rect key="frame" x="0.0" y="0.0" width="263" height="134.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="trf-4J-4fq">
+                                                <rect key="frame" x="10" y="42.5" width="243" height="50"/>
+                                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="hOn-W6-3mA"/>
+                                                </constraints>
+                                                <state key="normal" title="Hardware Info"/>
+                                                <connections>
+                                                    <action selector="hardWareInfoButtonTapped:" destination="hd4-yH-mMf" eventType="touchUpInside" id="Mbu-ZI-lq1"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="trf-4J-4fq" firstAttribute="leading" secondItem="b4h-JV-cQP" secondAttribute="leading" constant="10" id="0Kj-Ie-U0g"/>
+                                            <constraint firstAttribute="trailing" secondItem="trf-4J-4fq" secondAttribute="trailing" constant="10" id="4tK-Qm-zAH"/>
+                                            <constraint firstItem="trf-4J-4fq" firstAttribute="centerX" secondItem="b4h-JV-cQP" secondAttribute="centerX" id="eMY-YS-icj"/>
+                                            <constraint firstItem="trf-4J-4fq" firstAttribute="centerY" secondItem="b4h-JV-cQP" secondAttribute="centerY" id="s8H-6e-va5"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cQe-11-Xyi">
+                                        <rect key="frame" x="0.0" y="134.5" width="263" height="134"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZx-kS-Ora">
+                                                <rect key="frame" x="10" y="42" width="243" height="50"/>
+                                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="m6K-i6-g8G"/>
+                                                </constraints>
+                                                <state key="normal" title="IP &amp;&amp; Address"/>
+                                                <connections>
+                                                    <action selector="addressInfoButtonTapped:" destination="hd4-yH-mMf" eventType="touchUpInside" id="dfs-qs-hvY"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="LZx-kS-Ora" firstAttribute="centerY" secondItem="cQe-11-Xyi" secondAttribute="centerY" id="3de-7T-PDN"/>
+                                            <constraint firstItem="LZx-kS-Ora" firstAttribute="centerX" secondItem="cQe-11-Xyi" secondAttribute="centerX" id="H93-pp-yFC"/>
+                                            <constraint firstItem="LZx-kS-Ora" firstAttribute="leading" secondItem="cQe-11-Xyi" secondAttribute="leading" constant="10" id="Rxg-UR-kEv"/>
+                                            <constraint firstAttribute="trailing" secondItem="LZx-kS-Ora" secondAttribute="trailing" constant="10" id="S6P-uK-7g9"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mm3-Qz-gya">
+                                        <rect key="frame" x="0.0" y="268.5" width="263" height="134.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9te-rA-fgP">
+                                                <rect key="frame" x="10" y="43" width="243" height="50"/>
+                                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="KQp-WS-5ji"/>
+                                                </constraints>
+                                                <state key="normal" title=" CPU &amp;&amp; Disk &amp;&amp; Memory"/>
+                                                <connections>
+                                                    <action selector="diskInfoButtonTapped:" destination="hd4-yH-mMf" eventType="touchUpInside" id="LBj-dX-kMi"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="9te-rA-fgP" firstAttribute="centerY" secondItem="mm3-Qz-gya" secondAttribute="centerY" id="98y-uO-83v"/>
+                                            <constraint firstItem="9te-rA-fgP" firstAttribute="centerX" secondItem="mm3-Qz-gya" secondAttribute="centerX" id="Ehh-7y-Yix"/>
+                                            <constraint firstAttribute="trailing" secondItem="9te-rA-fgP" secondAttribute="trailing" constant="10" id="UJJ-81-P34"/>
+                                            <constraint firstItem="9te-rA-fgP" firstAttribute="leading" secondItem="mm3-Qz-gya" secondAttribute="leading" constant="10" id="iRJ-r8-mpA"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                             </stackView>
                         </subviews>

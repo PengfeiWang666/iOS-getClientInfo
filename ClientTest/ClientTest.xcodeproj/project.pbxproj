@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0F5D09F01D264F5900F3FDD3 /* NSData+CRC32.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F5D09EF1D264F5900F3FDD3 /* NSData+CRC32.m */; };
-		0F5D09F61D26549300F3FDD3 /* WPFTestTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F5D09F51D26549300F3FDD3 /* WPFTestTableView.m */; };
 		0F5D09FD1D26572900F3FDD3 /* WPFInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F5D09FC1D26572900F3FDD3 /* WPFInfo.m */; };
 		0F8AEC401D262754007827BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8AEC3F1D262754007827BA /* main.m */; };
 		0F8AEC431D262754007827BA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8AEC421D262754007827BA /* AppDelegate.m */; };
@@ -18,6 +17,11 @@
 		0F8AEC4E1D262754007827BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F8AEC4C1D262754007827BA /* LaunchScreen.storyboard */; };
 		0F8AEC591D262755007827BA /* ClientTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8AEC581D262755007827BA /* ClientTestTests.m */; };
 		0F8AEC641D262755007827BA /* ClientTestUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8AEC631D262755007827BA /* ClientTestUITests.m */; };
+		356F36D21ECDB899001603AB /* BasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 356F36D11ECDB899001603AB /* BasicViewController.m */; };
+		356F36DF1ECDCB5A001603AB /* BatteryInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 356F36DC1ECDCB5A001603AB /* BatteryInfo.m */; };
+		356F36E01ECDCB5A001603AB /* BatteryInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 356F36DE1ECDCB5A001603AB /* BatteryInfoManager.m */; };
+		356F36E41ECDCC36001603AB /* DeviceInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 356F36E31ECDCC36001603AB /* DeviceInfoManager.m */; };
+		356F36E71ECFCC30001603AB /* BatteryInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 356F36E61ECFCC30001603AB /* BatteryInfoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +44,6 @@
 /* Begin PBXFileReference section */
 		0F5D09EE1D264F5900F3FDD3 /* NSData+CRC32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CRC32.h"; sourceTree = "<group>"; };
 		0F5D09EF1D264F5900F3FDD3 /* NSData+CRC32.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CRC32.m"; sourceTree = "<group>"; };
-		0F5D09F41D26549300F3FDD3 /* WPFTestTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPFTestTableView.h; sourceTree = "<group>"; };
-		0F5D09F51D26549300F3FDD3 /* WPFTestTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPFTestTableView.m; sourceTree = "<group>"; };
 		0F5D09FB1D26572900F3FDD3 /* WPFInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPFInfo.h; sourceTree = "<group>"; };
 		0F5D09FC1D26572900F3FDD3 /* WPFInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPFInfo.m; sourceTree = "<group>"; };
 		0F8AEC3B1D262754007827BA /* ClientTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClientTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,6 +62,16 @@
 		0F8AEC5F1D262755007827BA /* ClientTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClientTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F8AEC631D262755007827BA /* ClientTestUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClientTestUITests.m; sourceTree = "<group>"; };
 		0F8AEC651D262755007827BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		356F36D01ECDB899001603AB /* BasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicViewController.h; sourceTree = "<group>"; };
+		356F36D11ECDB899001603AB /* BasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicViewController.m; sourceTree = "<group>"; };
+		356F36DB1ECDCB5A001603AB /* BatteryInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BatteryInfo.h; sourceTree = "<group>"; };
+		356F36DC1ECDCB5A001603AB /* BatteryInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BatteryInfo.m; sourceTree = "<group>"; };
+		356F36DD1ECDCB5A001603AB /* BatteryInfoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BatteryInfoManager.h; sourceTree = "<group>"; };
+		356F36DE1ECDCB5A001603AB /* BatteryInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BatteryInfoManager.m; sourceTree = "<group>"; };
+		356F36E21ECDCC36001603AB /* DeviceInfoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfoManager.h; sourceTree = "<group>"; };
+		356F36E31ECDCC36001603AB /* DeviceInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInfoManager.m; sourceTree = "<group>"; };
+		356F36E51ECFCC30001603AB /* BatteryInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BatteryInfoViewController.h; sourceTree = "<group>"; };
+		356F36E61ECFCC30001603AB /* BatteryInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BatteryInfoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +111,6 @@
 		0F5D09F81D26567100F3FDD3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0F5D09F41D26549300F3FDD3 /* WPFTestTableView.h */,
-				0F5D09F51D26549300F3FDD3 /* WPFTestTableView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -110,6 +120,8 @@
 			children = (
 				0F8AEC441D262754007827BA /* ViewController.h */,
 				0F8AEC451D262754007827BA /* ViewController.m */,
+				356F36D01ECDB899001603AB /* BasicViewController.h */,
+				356F36D11ECDB899001603AB /* BasicViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -148,6 +160,7 @@
 		0F8AEC3D1D262754007827BA /* ClientTest */ = {
 			isa = PBXGroup;
 			children = (
+				356F36D91ECDCB16001603AB /* Class */,
 				0F5D09FA1D26568100F3FDD3 /* Others */,
 				0F5D09F91D26567900F3FDD3 /* Controller */,
 				0F5D09F81D26567100F3FDD3 /* View */,
@@ -185,6 +198,53 @@
 				0F8AEC651D262755007827BA /* Info.plist */,
 			);
 			path = ClientTestUITests;
+			sourceTree = "<group>";
+		};
+		356F36D91ECDCB16001603AB /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				356F36F21ECFCF5F001603AB /* 3rd */,
+				356F36E81ECFCD7F001603AB /* Resource */,
+				356F36E11ECDCBF6001603AB /* Tools */,
+				356F36DA1ECDCB16001603AB /* BatteryAbout */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		356F36DA1ECDCB16001603AB /* BatteryAbout */ = {
+			isa = PBXGroup;
+			children = (
+				356F36DB1ECDCB5A001603AB /* BatteryInfo.h */,
+				356F36DC1ECDCB5A001603AB /* BatteryInfo.m */,
+				356F36DD1ECDCB5A001603AB /* BatteryInfoManager.h */,
+				356F36DE1ECDCB5A001603AB /* BatteryInfoManager.m */,
+				356F36E51ECFCC30001603AB /* BatteryInfoViewController.h */,
+				356F36E61ECFCC30001603AB /* BatteryInfoViewController.m */,
+			);
+			path = BatteryAbout;
+			sourceTree = "<group>";
+		};
+		356F36E11ECDCBF6001603AB /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				356F36E21ECDCC36001603AB /* DeviceInfoManager.h */,
+				356F36E31ECDCC36001603AB /* DeviceInfoManager.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		356F36E81ECFCD7F001603AB /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		356F36F21ECFCF5F001603AB /* 3rd */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = 3rd;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,11 +379,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F5D09F01D264F5900F3FDD3 /* NSData+CRC32.m in Sources */,
+				356F36E41ECDCC36001603AB /* DeviceInfoManager.m in Sources */,
 				0F8AEC461D262754007827BA /* ViewController.m in Sources */,
 				0F8AEC431D262754007827BA /* AppDelegate.m in Sources */,
+				356F36E01ECDCB5A001603AB /* BatteryInfoManager.m in Sources */,
 				0F5D09FD1D26572900F3FDD3 /* WPFInfo.m in Sources */,
-				0F5D09F61D26549300F3FDD3 /* WPFTestTableView.m in Sources */,
+				356F36E71ECFCC30001603AB /* BatteryInfoViewController.m in Sources */,
+				356F36D21ECDB899001603AB /* BasicViewController.m in Sources */,
 				0F8AEC401D262754007827BA /* main.m in Sources */,
+				356F36DF1ECDCB5A001603AB /* BatteryInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,7 +532,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ClientTest/Class/3rd",
+				);
 				INFOPLIST_FILE = ClientTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.apple.ClientTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -482,7 +551,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ClientTest/Class/3rd",
+				);
 				INFOPLIST_FILE = ClientTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.apple.ClientTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";

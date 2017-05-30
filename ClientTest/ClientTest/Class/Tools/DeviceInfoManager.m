@@ -9,15 +9,26 @@
 #import "DeviceInfoManager.h"
 #import "sys/utsname.h"
 #import <AdSupport/AdSupport.h>
+#import <UIKit/UIKit.h>
 
+// 下面是获取mac地址需要导入的头文件
 #include <sys/socket.h> // Per msqr
 #include <sys/sysctl.h>
 #include <net/if.h>
 #include <net/if_dl.h>
 
+
 #import <sys/sockio.h>
 #import <sys/ioctl.h>
 #import <arpa/inet.h>
+
+// 下面是获取ip需要的头文件
+#include <ifaddrs.h>
+
+
+#include <mach/mach.h> // 获取CPU信息所需要引入的头文件
+//#include <arpa/inet.h>
+//#include <ifaddrs.h>
 
 @implementation DeviceInfoManager
 
@@ -34,7 +45,6 @@
 - (NSString *)getDeviceIPAddresses {
     
     int sockfd = socket(AF_INET, SOCK_DGRAM, 0);
-    
     
     NSMutableArray *ips = [NSMutableArray array];
     
@@ -85,6 +95,51 @@
         }
     }
     return deviceIP;
+}
+
+- (NSString *)ipAddressWithIfaName:(NSString *)name {
+    if (name.length == 0) return nil;
+    NSString *address = nil;
+    struct ifaddrs *addrs = NULL;
+    if (getifaddrs(&addrs) == 0) {
+        struct ifaddrs *addr = addrs;
+        while (addr) {
+            if ([[NSString stringWithUTF8String:addr->ifa_name] isEqualToString:name]) {
+                sa_family_t family = addr->ifa_addr->sa_family;
+                switch (family) {
+                    case AF_INET: { // IPv4
+                        char str[INET_ADDRSTRLEN] = {0};
+                        inet_ntop(family, &(((struct sockaddr_in *)addr->ifa_addr)->sin_addr), str, sizeof(str));
+                        if (strlen(str) > 0) {
+                            address = [NSString stringWithUTF8String:str];
+                        }
+                    } break;
+                        
+                    case AF_INET6: { // IPv6
+                        char str[INET6_ADDRSTRLEN] = {0};
+                        inet_ntop(family, &(((struct sockaddr_in6 *)addr->ifa_addr)->sin6_addr), str, sizeof(str));
+                        if (strlen(str) > 0) {
+                            address = [NSString stringWithUTF8String:str];
+                        }
+                    }
+                        
+                    default: break;
+                }
+                if (address) break;
+            }
+            addr = addr->ifa_next;
+        }
+    }
+    freeifaddrs(addrs);
+    return address ? address : @"该设备不存在该ip地址";
+}
+
+- (NSString *)getIpAddressWIFI {
+    return [self ipAddressWithIfaName:@"en0"];
+}
+
+- (NSString *)getIpAddressCell {
+    return [self ipAddressWithIfaName:@"pdp_ip0"];
 }
 
 /**
@@ -204,6 +259,11 @@
     if ([deviceString isEqualToString:@"iPad6,7"])      return @"iPad Pro 12.9";
     if ([deviceString isEqualToString:@"iPad6,8"])      return @"iPad Pro 12.9";
     
+    if ([deviceString isEqualToString:@"AppleTV2,1"])      return @"Apple TV 2";
+    if ([deviceString isEqualToString:@"AppleTV3,1"])      return @"Apple TV 3";
+    if ([deviceString isEqualToString:@"AppleTV3,2"])      return @"Apple TV 3";
+    if ([deviceString isEqualToString:@"AppleTV5,3"])      return @"Apple TV 4";
+    
     if ([deviceString isEqualToString:@"i386"])         return @"i386Simulator";
     if ([deviceString isEqualToString:@"x86_64"])       return @"x86_64Simulator";
     
@@ -221,6 +281,107 @@
     uname(&systemInfo);
     NSString *deviceModel = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
     return deviceModel;
+}
+
+#ifdef __IPHONE_OS_VERSION_MIN_REQUIRED
+- (BOOL)canMakePhoneCall {
+    __block BOOL can;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        can = [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"tel://"]];
+    });
+    return can;
+}
+#endif
+
+#pragma mark - CPU
+- (NSUInteger)getCPUCount {
+    return [NSProcessInfo processInfo].activeProcessorCount;
+}
+
+- (float)getCPUUsage {
+    float cpu = 0;
+    NSArray *cpus = [self getPerCPUUsage];
+    if (cpus.count == 0) return -1;
+    for (NSNumber *n in cpus) {
+        cpu += n.floatValue;
+    }
+    return cpu;
+}
+
+- (NSArray *)getPerCPUUsage {
+    processor_info_array_t _cpuInfo, _prevCPUInfo = nil;
+    mach_msg_type_number_t _numCPUInfo, _numPrevCPUInfo = 0;
+    unsigned _numCPUs;
+    NSLock *_cpuUsageLock;
+    
+    int _mib[2U] = { CTL_HW, HW_NCPU };
+    size_t _sizeOfNumCPUs = sizeof(_numCPUs);
+    int _status = sysctl(_mib, 2U, &_numCPUs, &_sizeOfNumCPUs, NULL, 0U);
+    if (_status)
+        _numCPUs = 1;
+    
+    _cpuUsageLock = [[NSLock alloc] init];
+    
+    natural_t _numCPUsU = 0U;
+    kern_return_t err = host_processor_info(mach_host_self(), PROCESSOR_CPU_LOAD_INFO, &_numCPUsU, &_cpuInfo, &_numCPUInfo);
+    if (err == KERN_SUCCESS) {
+        [_cpuUsageLock lock];
+        
+        NSMutableArray *cpus = [NSMutableArray new];
+        for (unsigned i = 0U; i < _numCPUs; ++i) {
+            Float32 _inUse, _total;
+            if (_prevCPUInfo) {
+                _inUse = (
+                          (_cpuInfo[(CPU_STATE_MAX * i) + CPU_STATE_USER]   - _prevCPUInfo[(CPU_STATE_MAX * i) + CPU_STATE_USER])
+                          + (_cpuInfo[(CPU_STATE_MAX * i) + CPU_STATE_SYSTEM] - _prevCPUInfo[(CPU_STATE_MAX * i) + CPU_STATE_SYSTEM])
+                          + (_cpuInfo[(CPU_STATE_MAX * i) + CPU_STATE_NICE]   - _prevCPUInfo[(CPU_STATE_MAX * i) + CPU_STATE_NICE])
+                          );
+                _total = _inUse + (_cpuInfo[(CPU_STATE_MAX * i) + CPU_STATE_IDLE] - _prevCPUInfo[(CPU_STATE_MAX * i) + CPU_STATE_IDLE]);
+            } else {
+                _inUse = _cpuInfo[(CPU_STATE_MAX * i) + CPU_STATE_USER] + _cpuInfo[(CPU_STATE_MAX * i) + CPU_STATE_SYSTEM] + _cpuInfo[(CPU_STATE_MAX * i) + CPU_STATE_NICE];
+                _total = _inUse + _cpuInfo[(CPU_STATE_MAX * i) + CPU_STATE_IDLE];
+            }
+            [cpus addObject:@(_inUse / _total)];
+        }
+        
+        [_cpuUsageLock unlock];
+        if (_prevCPUInfo) {
+            size_t prevCpuInfoSize = sizeof(integer_t) * _numPrevCPUInfo;
+            vm_deallocate(mach_task_self(), (vm_address_t)_prevCPUInfo, prevCpuInfoSize);
+        }
+        return cpus;
+    } else {
+        return nil;
+    }
+}
+
+#pragma mark - Disk
+- (int64_t)getTotalDiskSpace {
+    NSError *error = nil;
+    NSDictionary *attrs = [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory() error:&error];
+    if (error) return -1;
+    int64_t space =  [[attrs objectForKey:NSFileSystemSize] longLongValue];
+    if (space < 0) space = -1;
+    return space;
+}
+
+- (int64_t)getFreediskSpace {
+    NSError *error = nil;
+    NSDictionary *attrs = [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory() error:&error];
+    if (error) return -1;
+    int64_t space =  [[attrs objectForKey:NSFileSystemFreeSize] longLongValue];
+    if (space < 0) space = -1;
+    return space;
+}
+
+- (int64_t)getUsedDiskSpace {
+    int64_t totalDisk = [self getTotalDiskSpace];
+    int64_t freeDisk = [self getFreediskSpace];
+    if (totalDisk < 0 || freeDisk < 0) return -1;
+    int64_t usedDisk = totalDisk - freeDisk;
+    if (usedDisk < 0) usedDisk = -1;
+    return usedDisk;
 }
 
 @end

@@ -23,9 +23,18 @@
     // Do any additional setup after loading the view.
 }
 
-- (IBAction)basicInfoButtonTapped:(id)sender {
-    BasicViewController *basicVC = [[BasicViewController alloc] init];
-    [self.navigationController pushViewController:basicVC  animated:YES];
+- (IBAction)hardWareInfoButtonTapped:(id)sender {
+    BasicViewController *hardwareVC = [[BasicViewController alloc] initWIthType:BasicInfoTypeHardWare];
+    [self.navigationController pushViewController:hardwareVC  animated:YES];
+}
+
+- (IBAction)addressInfoButtonTapped:(id)sender {
+    BasicViewController *addressVC = [[BasicViewController alloc] initWIthType:BasicInfoTypeIpAddress];
+    [self.navigationController pushViewController:addressVC  animated:YES];
+}
+- (IBAction)diskInfoButtonTapped:(id)sender {
+    BasicViewController *dickVC = [[BasicViewController alloc] initWIthType:BasicInfoTypeDisk];
+    [self.navigationController pushViewController:dickVC  animated:YES];
 }
 
 - (IBAction)batteryInfoButtonTapped:(id)sender {

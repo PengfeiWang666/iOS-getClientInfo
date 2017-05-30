@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSUInteger, BasicInfoType) {
+    BasicInfoTypeHardWare,
+    BasicInfoTypeIpAddress,
+    BasicInfoTypeDisk,
+};
+
 @interface BasicViewController : UIViewController
+
+- (instancetype)initWIthType:(BasicInfoType)type;
 
 @end
