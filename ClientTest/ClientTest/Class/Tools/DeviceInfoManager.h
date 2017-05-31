@@ -42,4 +42,19 @@
 /** 获取已使用的磁盘空间 */
 - (int64_t)getUsedDiskSpace;
 
+/** 获取总内存空间 */
+- (int64_t)getTotalMemory;
+/** 获取活跃的内存空间 */
+- (int64_t)getActiveMemory;
+/** 获取不活跃的内存空间 */
+- (int64_t)getInActiveMemory;
+/** 获取空闲的内存空间 */
+- (int64_t)getFreeMemory;
+/** 获取正在使用的内存空间 */
+- (int64_t)getUsedMemory;
+/** 获取存放内核的内存空间 */
+- (int64_t)getWiredMemory;
+/** 获取可释放的内存空间 */
+- (int64_t)getPurgableMemory;
+
 @end
