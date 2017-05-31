@@ -227,6 +227,33 @@
                             @"infoValue" : perCPUUsage
                             };
     [self.infoArray addObject:dict3];
+    
+    int64_t totalDisk = [[DeviceInfoManager sharedManager] getTotalDiskSpace];
+    NSLog(@"totalDisk-->%lld", totalDisk);
+    NSString *totalDiskInfo = [NSString stringWithFormat:@"== %.2f MB == %.2f GB", totalDisk/1024/1024.0, totalDisk/1024/1024/1024.0];
+    NSDictionary *dict4 = @{
+                            @"infoKey"   : @"磁盘总空间",
+                            @"infoValue" : totalDiskInfo
+                            };
+    [self.infoArray addObject:dict4];
+    
+    int64_t usedDisk = [[DeviceInfoManager sharedManager] getUsedDiskSpace];
+    NSLog(@"usedDisk-->%lld", usedDisk);
+    NSString *usedDiskInfo = [NSString stringWithFormat:@" == %.2f MB == %.2f GB", usedDisk/1024/1024.0, usedDisk/1024/1024/1024.0];
+    NSDictionary *dict5 = @{
+                            @"infoKey"   : @"磁盘 已使用空间",
+                            @"infoValue" : usedDiskInfo
+                            };
+    [self.infoArray addObject:dict5];
+    
+    int64_t freeDisk = [[DeviceInfoManager sharedManager] getFreeDiskSpace];
+    NSLog(@"freeDisk-->%lld", freeDisk);
+    NSString *freeDiskInfo = [NSString stringWithFormat:@" %.2f MB == %.2f GB", freeDisk/1024/1024.0, freeDisk/1024/1024/1024.0];
+    NSDictionary *dict6 = @{
+                            @"infoKey"   : @"磁盘空闲空间",
+                            @"infoValue" : freeDiskInfo
+                            };
+    [self.infoArray addObject:dict6];
 }
 
 
