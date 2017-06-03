@@ -294,6 +294,11 @@
 }
 #endif
 
+- (NSDate *)getSystemUptime {
+    NSTimeInterval time = [[NSProcessInfo processInfo] systemUptime];
+    return [[NSDate alloc] initWithTimeIntervalSinceNow:(0 - time)];
+}
+
 #pragma mark - CPU
 - (NSUInteger)getCPUCount {
     return [NSProcessInfo processInfo].activeProcessorCount;

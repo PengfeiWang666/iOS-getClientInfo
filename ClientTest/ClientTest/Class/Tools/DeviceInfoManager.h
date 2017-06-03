@@ -27,6 +27,8 @@
 /** 获取广告标识符 */
 - (NSString *)getIDFA;
 - (NSString *)getDeviceModel;
+/** 获取设备上次重启的时间 */
+- (NSDate *)getSystemUptime;
 
 /** 获取CPU数量 */
 - (NSUInteger)getCPUCount;

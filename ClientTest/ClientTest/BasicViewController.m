@@ -124,6 +124,14 @@
                              @"infoValue" : @(canMakePhoneCall)
                              };
     [self.infoArray addObject:dict9];
+    
+    NSDate *systemUptime = [[DeviceInfoManager sharedManager] getSystemUptime];
+    NSLog(@"systemUptime-->%@", systemUptime);
+    NSDictionary *dict10 = @{
+                            @"infoKey"   : @"设备上次重启的时间",
+                            @"infoValue" : systemUptime
+                            };
+    [self.infoArray addObject:dict10];
 }
 
 - (void)setupAddressInfo {
