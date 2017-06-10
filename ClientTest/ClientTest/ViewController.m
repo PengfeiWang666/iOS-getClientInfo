@@ -8,7 +8,6 @@
 
 #import "ViewController.h"
 #import "BasicViewController.h"
-#import "BatteryInfoViewController.h"
 
 @interface ViewController () 
 
@@ -38,8 +37,6 @@
 }
 
 - (IBAction)batteryInfoButtonTapped:(id)sender {
-    BatteryInfoViewController *batteryVC = [[BatteryInfoViewController alloc] init];
-    [self.navigationController pushViewController:batteryVC animated:YES];
     
 }
 
