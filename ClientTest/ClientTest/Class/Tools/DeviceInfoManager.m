@@ -374,6 +374,17 @@
 }
 
 #pragma mark - Disk
+- (NSString *)getApplicationSize {
+    unsigned long long documentSize   =  [self getSizeOfFolder:[self getDocumentPath]];
+    unsigned long long librarySize   =  [self getSizeOfFolder:[self getLibraryPath]];
+    unsigned long long cacheSize =  [self getSizeOfFolder:[self getCachePath]];
+    
+    unsigned long long total = documentSize + librarySize + cacheSize;
+    
+    NSString *applicationSize = [NSByteCountFormatter stringFromByteCount:total countStyle:NSByteCountFormatterCountStyleFile];
+    return applicationSize;
+}
+
 - (int64_t)getTotalDiskSpace {
     NSError *error = nil;
     NSDictionary *attrs = [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory() error:&error];
@@ -499,6 +510,39 @@
     int mib[2] = {CTL_HW, typeSpecifier};
     sysctl(mib, 2, &result, &size, NULL, 0);
     return (NSUInteger)result;
+}
+
+- (NSString *)getDocumentPath {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *basePath = [paths firstObject];
+    return basePath;
+}
+
+- (NSString *)getLibraryPath {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+    NSString *basePath = [paths firstObject];
+    return basePath;
+}
+
+- (NSString *)getCachePath {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    NSString *basePath = [paths firstObject];
+    return basePath;
+}
+
+
+-(unsigned long long)getSizeOfFolder:(NSString *)folderPath {
+    NSArray *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:folderPath error:nil];
+    NSEnumerator *contentsEnumurator = [contents objectEnumerator];
+    
+    NSString *file;
+    unsigned long long folderSize = 0;
+    
+    while (file = [contentsEnumurator nextObject]) {
+        NSDictionary *fileAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:[folderPath stringByAppendingPathComponent:file] error:nil];
+        folderSize += [[fileAttributes objectForKey:NSFileSize] intValue];
+    }
+    return folderSize;
 }
 
 @end

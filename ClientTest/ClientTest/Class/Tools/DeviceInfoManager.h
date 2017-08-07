@@ -30,7 +30,9 @@
 /** 获取设备上次重启的时间 */
 - (NSDate *)getSystemUptime;
 - (NSUInteger)getCPUFrequency;
+/** 获取总线程频率 */
 - (NSUInteger)getBusFrequency;
+/** 获取当前设备主存 */
 - (NSUInteger)getRamSize;
 
 /** 获取CPU数量 */
@@ -40,6 +42,8 @@
 /** 获取单个CPU使用百分比 */
 - (NSArray *)getPerCPUUsage;
 
+/** 获取本 App 所占磁盘空间 */
+- (NSString *)getApplicationSize;
 /** 获取磁盘总空间 */
 - (int64_t)getTotalDiskSpace;
 /** 获取未使用的磁盘空间 */
