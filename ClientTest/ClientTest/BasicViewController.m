@@ -132,6 +132,23 @@
                             @"infoValue" : systemUptime
                             };
     [self.infoArray addObject:dict10];
+    
+    NSUInteger busFrequency = [[DeviceInfoManager sharedManager] getBusFrequency];
+    NSLog(@"busFrequency-->%lu", busFrequency);
+    NSDictionary *dict11 = @{
+                             @"infoKey"   : @"当前设备的Bus Frequency",
+                             @"infoValue" : @(busFrequency)
+                             };
+    [self.infoArray addObject:dict11];
+    
+    NSUInteger ramSize = [[DeviceInfoManager sharedManager] getRamSize];
+    NSLog(@"ramSize-->%lu", ramSize);
+    NSDictionary *dict12 = @{
+                             @"infoKey"   : @"当前设备的Ram Size",
+                             @"infoValue" : @(ramSize)
+                             };
+    [self.infoArray addObject:dict12];
+    
 }
 
 - (void)setupAddressInfo {

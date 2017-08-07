@@ -299,6 +299,18 @@
     return [[NSDate alloc] initWithTimeIntervalSinceNow:(0 - time)];
 }
 
+- (NSUInteger)getCPUFrequency {
+    return [self getSystemInfo:HW_CPU_FREQ];
+}
+
+- (NSUInteger)getBusFrequency {
+    return [self getSystemInfo:HW_BUS_FREQ];
+}
+
+- (NSUInteger)getRamSize {
+    return [self getSystemInfo:HW_MEMSIZE];
+}
+
 #pragma mark - CPU
 - (NSUInteger)getCPUCount {
     return [NSProcessInfo processInfo].activeProcessorCount;
@@ -478,6 +490,15 @@
     kern = host_statistics(host_port, HOST_VM_INFO, (host_info_t)&vm_stat, &host_size);
     if (kern != KERN_SUCCESS) return -1;
     return vm_stat.purgeable_count * page_size;
+}
+
+#pragma mark - Private Method
+- (NSUInteger)getSystemInfo:(uint)typeSpecifier {
+    size_t size = sizeof(int);
+    int result;
+    int mib[2] = {CTL_HW, typeSpecifier};
+    sysctl(mib, 2, &result, &size, NULL, 0);
+    return (NSUInteger)result;
 }
 
 @end

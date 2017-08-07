@@ -29,6 +29,9 @@
 - (NSString *)getDeviceModel;
 /** 获取设备上次重启的时间 */
 - (NSDate *)getSystemUptime;
+- (NSUInteger)getCPUFrequency;
+- (NSUInteger)getBusFrequency;
+- (NSUInteger)getRamSize;
 
 /** 获取CPU数量 */
 - (NSUInteger)getCPUCount;
