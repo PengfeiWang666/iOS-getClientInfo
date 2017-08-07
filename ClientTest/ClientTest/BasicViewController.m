@@ -136,7 +136,7 @@
     NSUInteger busFrequency = [[DeviceInfoManager sharedManager] getBusFrequency];
     NSLog(@"busFrequency-->%lu", busFrequency);
     NSDictionary *dict11 = @{
-                             @"infoKey"   : @"当前设备的Bus Frequency",
+                             @"infoKey"   : @"当前设备的总线频率Bus Frequency",
                              @"infoValue" : @(busFrequency)
                              };
     [self.infoArray addObject:dict11];
@@ -144,7 +144,7 @@
     NSUInteger ramSize = [[DeviceInfoManager sharedManager] getRamSize];
     NSLog(@"ramSize-->%lu", ramSize);
     NSDictionary *dict12 = @{
-                             @"infoKey"   : @"当前设备的Ram Size",
+                             @"infoKey"   : @"当前设备的主存大小(随机存取存储器（Random Access Memory)）",
                              @"infoValue" : @(ramSize)
                              };
     [self.infoArray addObject:dict12];
@@ -243,7 +243,7 @@
     NSUInteger cpuFrequency = [[DeviceInfoManager sharedManager] getCPUFrequency];
     NSLog(@"cpuFrequency-->%lu", cpuFrequency);
     NSDictionary *dict3 = @{
-                             @"infoKey"   : @"CPU Frequency",
+                             @"infoKey"   : @"CPU 频率",
                              @"infoValue" : @(cpuFrequency)
                              };
     [self.infoArray addObject:dict3];
