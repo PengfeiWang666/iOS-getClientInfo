@@ -240,6 +240,14 @@
                             };
     [self.infoArray addObject:dict2];
     
+    NSUInteger cpuFrequency = [[DeviceInfoManager sharedManager] getCPUFrequency];
+    NSLog(@"cpuFrequency-->%lu", cpuFrequency);
+    NSDictionary *dict3 = @{
+                             @"infoKey"   : @"CPU Frequency",
+                             @"infoValue" : @(cpuFrequency)
+                             };
+    [self.infoArray addObject:dict3];
+    
     NSArray *perCPUArr = [[DeviceInfoManager sharedManager] getPerCPUUsage];
     NSMutableString *perCPUUsage = [NSMutableString string];
     for (NSNumber *per in perCPUArr) {
@@ -247,101 +255,101 @@
         [perCPUUsage appendFormat:@"%.2f<-->", per.floatValue];
     }
     NSLog(@"单个CPU使用比例-->%@", perCPUUsage);
-    NSDictionary *dict3 = @{
+    NSDictionary *dict4 = @{
                             @"infoKey"   : @"单个CPU使用比例",
                             @"infoValue" : perCPUUsage
                             };
-    [self.infoArray addObject:dict3];
+    [self.infoArray addObject:dict4];
     
     int64_t totalDisk = [[DeviceInfoManager sharedManager] getTotalDiskSpace];
     NSLog(@"totalDisk-->%lld", totalDisk);
     NSString *totalDiskInfo = [NSString stringWithFormat:@"== %.2f MB == %.2f GB", totalDisk/1024/1024.0, totalDisk/1024/1024/1024.0];
-    NSDictionary *dict4 = @{
+    NSDictionary *dict5 = @{
                             @"infoKey"   : @"磁盘总空间",
                             @"infoValue" : totalDiskInfo
                             };
-    [self.infoArray addObject:dict4];
+    [self.infoArray addObject:dict5];
     
     int64_t usedDisk = [[DeviceInfoManager sharedManager] getUsedDiskSpace];
     NSLog(@"usedDisk-->%lld", usedDisk);
     NSString *usedDiskInfo = [NSString stringWithFormat:@" == %.2f MB == %.2f GB", usedDisk/1024/1024.0, usedDisk/1024/1024/1024.0];
-    NSDictionary *dict5 = @{
+    NSDictionary *dict6 = @{
                             @"infoKey"   : @"磁盘 已使用空间",
                             @"infoValue" : usedDiskInfo
                             };
-    [self.infoArray addObject:dict5];
+    [self.infoArray addObject:dict6];
     
     int64_t freeDisk = [[DeviceInfoManager sharedManager] getFreeDiskSpace];
     NSLog(@"freeDisk-->%lld", freeDisk);
     NSString *freeDiskInfo = [NSString stringWithFormat:@" %.2f MB == %.2f GB", freeDisk/1024/1024.0, freeDisk/1024/1024/1024.0];
-    NSDictionary *dict6 = @{
+    NSDictionary *dict7 = @{
                             @"infoKey"   : @"磁盘空闲空间",
                             @"infoValue" : freeDiskInfo
                             };
-    [self.infoArray addObject:dict6];
+    [self.infoArray addObject:dict7];
     
     int64_t totalMemory = [[DeviceInfoManager sharedManager] getTotalMemory];
     NSLog(@"totalMemory-->%lld", totalMemory);
     NSString *totalMemoryInfo = [NSString stringWithFormat:@" %.2f MB == %.2f GB", totalMemory/1024/1024.0, totalMemory/1024/1024/1024.0];
-    NSDictionary *dict7 = @{
+    NSDictionary *dict8 = @{
                             @"infoKey"   : @"系统总内存空间",
                             @"infoValue" : totalMemoryInfo
                             };
-    [self.infoArray addObject:dict7];
+    [self.infoArray addObject:dict8];
     
     int64_t freeMemory = [[DeviceInfoManager sharedManager] getFreeMemory];
     NSLog(@"freeMemory-->%lld", freeMemory);
     NSString *freeMemoryInfo = [NSString stringWithFormat:@" %.2f MB == %.2f GB", freeMemory/1024/1024.0, freeMemory/1024/1024/1024.0];
-    NSDictionary *dict8 = @{
+    NSDictionary *dict9 = @{
                             @"infoKey"   : @"空闲的内存空间",
                             @"infoValue" : freeMemoryInfo
                             };
-    [self.infoArray addObject:dict8];
+    [self.infoArray addObject:dict9];
     
     int64_t usedMemory = [[DeviceInfoManager sharedManager] getFreeDiskSpace];
     NSLog(@"usedMemory-->%lld", usedMemory);
     NSString *usedMemoryInfo = [NSString stringWithFormat:@" %.2f MB == %.2f GB", usedMemory/1024/1024.0, usedMemory/1024/1024/1024.0];
-    NSDictionary *dict9 = @{
+    NSDictionary *dict10 = @{
                             @"infoKey"   : @"已使用的内存空间",
                             @"infoValue" : usedMemoryInfo
                             };
-    [self.infoArray addObject:dict9];
+    [self.infoArray addObject:dict10];
     
     int64_t activeMemory = [[DeviceInfoManager sharedManager] getActiveMemory];
     NSLog(@"activeMemory-->%lld", activeMemory);
     NSString *activeMemoryInfo = [NSString stringWithFormat:@"正在使用或者很短时间内被使用过 %.2f MB == %.2f GB", activeMemory/1024/1024.0, activeMemory/1024/1024/1024.0];
-    NSDictionary *dict10 = @{
+    NSDictionary *dict11 = @{
                             @"infoKey"   : @"活跃的内存",
                             @"infoValue" : activeMemoryInfo
                             };
-    [self.infoArray addObject:dict10];
+    [self.infoArray addObject:dict11];
     
     int64_t inActiveMemory = [[DeviceInfoManager sharedManager] getInActiveMemory];
     NSLog(@"inActiveMemory-->%lld", inActiveMemory);
     NSString *inActiveMemoryInfo = [NSString stringWithFormat:@"但是目前处于不活跃状态的内存 %.2f MB == %.2f GB", inActiveMemory/1024/1024.0, inActiveMemory/1024/1024/1024.0];
-    NSDictionary *dict11 = @{
+    NSDictionary *dict12 = @{
                             @"infoKey"   : @"最近使用过",
                             @"infoValue" : inActiveMemoryInfo
                             };
-    [self.infoArray addObject:dict11];
+    [self.infoArray addObject:dict12];
     
     int64_t wiredMemory = [[DeviceInfoManager sharedManager] getWiredMemory];
     NSLog(@"wiredMemory-->%lld", wiredMemory);
     NSString *wiredMemoryInfo = [NSString stringWithFormat:@"framework、用户级别的应用无法分配 %.2f MB == %.2f GB", wiredMemory/1024/1024.0, wiredMemory/1024/1024/1024.0];
-    NSDictionary *dict12 = @{
+    NSDictionary *dict13 = @{
                             @"infoKey"   : @"用来存放内核和数据结构的内存",
                             @"infoValue" : wiredMemoryInfo
                             };
-    [self.infoArray addObject:dict12];
+    [self.infoArray addObject:dict13];
     
     int64_t purgableMemory = [[DeviceInfoManager sharedManager] getPurgableMemory];
     NSLog(@"purgableMemory-->%lld", purgableMemory);
     NSString *purgableMemoryInfo = [NSString stringWithFormat:@"大对象存放所需的大块内存空间 %.2f MB == %.2f GB", freeDisk/1024/1024.0, freeDisk/1024/1024/1024.0];
-    NSDictionary *dict13 = @{
+    NSDictionary *dict14 = @{
                             @"infoKey"   : @"可释放的内存空间：内存吃紧自动释放",
                             @"infoValue" : purgableMemoryInfo
                             };
-    [self.infoArray addObject:dict13];
+    [self.infoArray addObject:dict14];
 }
 
 
