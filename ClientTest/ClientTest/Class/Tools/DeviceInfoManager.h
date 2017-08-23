@@ -15,11 +15,7 @@
 
 + (instancetype)sharedManager;
 
-/** 获取ip */
-- (NSString *)getDeviceIPAddresses;
 
-- (NSString *)getIpAddressWIFI;
-- (NSString *)getIpAddressCell;
 /** 获取设备型号 */
 - (NSString *)getDeviceName;
 /** 获取mac地址 */

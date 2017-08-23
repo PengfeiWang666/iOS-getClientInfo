@@ -9,7 +9,7 @@
 #import "BasicViewController.h"
 #import "WPFInfo.h"
 #import "DeviceInfoManager.h"
-
+#import "NetWorkInfoManager.h"
 
 @interface BasicViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -195,7 +195,7 @@
                              };
     [self.infoArray addObject:dict4];
     
-    NSString *deviceIP = [[DeviceInfoManager sharedManager] getDeviceIPAddresses];
+    NSString *deviceIP = [[NetWorkInfoManager sharedManager] getDeviceIPAddresses];
     NSLog(@"deviceIP-->%@", deviceIP);
     NSDictionary *dict5 = @{
                              @"infoKey"   : @"deviceIP",
@@ -203,7 +203,7 @@
                              };
     [self.infoArray addObject:dict5];
     
-    NSString *cellIP = [[DeviceInfoManager sharedManager] getIpAddressCell];
+    NSString *cellIP = [[NetWorkInfoManager sharedManager] getIpAddressCell];
     NSLog(@"cellIP-->%@", cellIP);
     NSDictionary *dict6 = @{
                              @"infoKey"   : @"蜂窝地址",
@@ -211,7 +211,7 @@
                              };
     [self.infoArray addObject:dict6];
     
-    NSString *wifiIP = [[DeviceInfoManager sharedManager] getIpAddressWIFI];
+    NSString *wifiIP = [[NetWorkInfoManager sharedManager] getIpAddressWIFI];
     NSLog(@"cellIP-->%@", wifiIP);
     NSDictionary *dict7 = @{
                              @"infoKey"   : @"WIFI IP地址",

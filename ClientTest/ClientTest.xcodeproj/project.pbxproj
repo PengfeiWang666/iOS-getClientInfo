@@ -17,6 +17,7 @@
 		0F8AEC4E1D262754007827BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F8AEC4C1D262754007827BA /* LaunchScreen.storyboard */; };
 		0F8AEC591D262755007827BA /* ClientTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8AEC581D262755007827BA /* ClientTestTests.m */; };
 		0F8AEC641D262755007827BA /* ClientTestUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8AEC631D262755007827BA /* ClientTestUITests.m */; };
+		3525F6011F4D536C00C8FE8D /* NetWorkInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3525F6001F4D536C00C8FE8D /* NetWorkInfoManager.m */; };
 		356F36D21ECDB899001603AB /* BasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 356F36D11ECDB899001603AB /* BasicViewController.m */; };
 		356F36E41ECDCC36001603AB /* DeviceInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 356F36E31ECDCC36001603AB /* DeviceInfoManager.m */; };
 /* End PBXBuildFile section */
@@ -59,6 +60,8 @@
 		0F8AEC5F1D262755007827BA /* ClientTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClientTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F8AEC631D262755007827BA /* ClientTestUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClientTestUITests.m; sourceTree = "<group>"; };
 		0F8AEC651D262755007827BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3525F5FF1F4D536C00C8FE8D /* NetWorkInfoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkInfoManager.h; sourceTree = "<group>"; };
+		3525F6001F4D536C00C8FE8D /* NetWorkInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkInfoManager.m; sourceTree = "<group>"; };
 		356F36D01ECDB899001603AB /* BasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicViewController.h; sourceTree = "<group>"; };
 		356F36D11ECDB899001603AB /* BasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicViewController.m; sourceTree = "<group>"; };
 		356F36E21ECDCC36001603AB /* DeviceInfoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfoManager.h; sourceTree = "<group>"; };
@@ -206,6 +209,8 @@
 			children = (
 				356F36E21ECDCC36001603AB /* DeviceInfoManager.h */,
 				356F36E31ECDCC36001603AB /* DeviceInfoManager.m */,
+				3525F5FF1F4D536C00C8FE8D /* NetWorkInfoManager.h */,
+				3525F6001F4D536C00C8FE8D /* NetWorkInfoManager.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -355,6 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3525F6011F4D536C00C8FE8D /* NetWorkInfoManager.m in Sources */,
 				0F5D09F01D264F5900F3FDD3 /* NSData+CRC32.m in Sources */,
 				356F36E41ECDCC36001603AB /* DeviceInfoManager.m in Sources */,
 				0F8AEC461D262754007827BA /* ViewController.m in Sources */,
