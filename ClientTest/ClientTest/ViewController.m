@@ -27,6 +27,11 @@
     [self.navigationController pushViewController:hardwareVC  animated:YES];
 }
 
+- (IBAction)batteryInfoButtonTapped:(id)sender {
+    BasicViewController *batteryVC = [[BasicViewController alloc] initWIthType:BasicInfoTypeBattery];
+    [self.navigationController pushViewController:batteryVC  animated:YES];
+}
+
 - (IBAction)addressInfoButtonTapped:(id)sender {
     BasicViewController *addressVC = [[BasicViewController alloc] initWIthType:BasicInfoTypeIpAddress];
     [self.navigationController pushViewController:addressVC  animated:YES];
@@ -34,10 +39,6 @@
 - (IBAction)diskInfoButtonTapped:(id)sender {
     BasicViewController *dickVC = [[BasicViewController alloc] initWIthType:BasicInfoTypeDisk];
     [self.navigationController pushViewController:dickVC  animated:YES];
-}
-
-- (IBAction)batteryInfoButtonTapped:(id)sender {
-    
 }
 
 @end

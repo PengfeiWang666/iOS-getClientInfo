@@ -20,6 +20,7 @@
 		3525F6011F4D536C00C8FE8D /* NetWorkInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3525F6001F4D536C00C8FE8D /* NetWorkInfoManager.m */; };
 		356F36D21ECDB899001603AB /* BasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 356F36D11ECDB899001603AB /* BasicViewController.m */; };
 		356F36E41ECDCC36001603AB /* DeviceInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 356F36E31ECDCC36001603AB /* DeviceInfoManager.m */; };
+		357CB08B1F4D6E96006BFB52 /* BatteryInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 357CB08A1F4D6E96006BFB52 /* BatteryInfoManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,8 @@
 		356F36D11ECDB899001603AB /* BasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicViewController.m; sourceTree = "<group>"; };
 		356F36E21ECDCC36001603AB /* DeviceInfoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfoManager.h; sourceTree = "<group>"; };
 		356F36E31ECDCC36001603AB /* DeviceInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInfoManager.m; sourceTree = "<group>"; };
+		357CB0891F4D6E96006BFB52 /* BatteryInfoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BatteryInfoManager.h; sourceTree = "<group>"; };
+		357CB08A1F4D6E96006BFB52 /* BatteryInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BatteryInfoManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +214,8 @@
 				356F36E31ECDCC36001603AB /* DeviceInfoManager.m */,
 				3525F5FF1F4D536C00C8FE8D /* NetWorkInfoManager.h */,
 				3525F6001F4D536C00C8FE8D /* NetWorkInfoManager.m */,
+				357CB0891F4D6E96006BFB52 /* BatteryInfoManager.h */,
+				357CB08A1F4D6E96006BFB52 /* BatteryInfoManager.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -365,6 +370,7 @@
 				356F36E41ECDCC36001603AB /* DeviceInfoManager.m in Sources */,
 				0F8AEC461D262754007827BA /* ViewController.m in Sources */,
 				0F8AEC431D262754007827BA /* AppDelegate.m in Sources */,
+				357CB08B1F4D6E96006BFB52 /* BatteryInfoManager.m in Sources */,
 				0F5D09FD1D26572900F3FDD3 /* WPFInfo.m in Sources */,
 				356F36D21ECDB899001603AB /* BasicViewController.m in Sources */,
 				0F8AEC401D262754007827BA /* main.m in Sources */,

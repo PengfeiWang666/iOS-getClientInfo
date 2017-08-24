@@ -10,8 +10,9 @@
 #import "WPFInfo.h"
 #import "DeviceInfoManager.h"
 #import "NetWorkInfoManager.h"
+#import "BatteryInfoManager.h"
 
-@interface BasicViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface BasicViewController ()<UITableViewDataSource, UITableViewDelegate, BatteryInfoDelegate>
 
 @property (nonatomic, strong) NSMutableArray *infoArray;
 
@@ -27,6 +28,8 @@
     if (self) {
         if (type == BasicInfoTypeHardWare) {
             [self setupHardwareInfo];
+        } else if (type == BasicInfoTypeBattery) {
+            [self setupBatteryInfo];
         } else if (type == BasicInfoTypeIpAddress) {
             [self setupAddressInfo];
         } else if (type == BasicInfoTypeDisk){
@@ -45,6 +48,10 @@
     self.myTableView.rowHeight = 80;
     
     [self.view addSubview:self.myTableView];
+}
+
+- (void)dealloc {
+    [[BatteryInfoManager sharedManager] stopBatteryMonitoring];
 }
 
 #pragma mark - private Method
@@ -77,11 +84,11 @@
                             };
     [self.infoArray addObject:dict3];
     
-    CGFloat batteryLevel = [[UIDevice currentDevice] batteryLevel];
-    NSLog(@"电池电量-->%f", batteryLevel);
+    NSString *device_model = [[DeviceInfoManager sharedManager] getDeviceModel];
+    NSLog(@"device_model-->%@", device_model);
     NSDictionary *dict4 = @{
-                            @"infoKey"   : @"电池电量",
-                            @"infoValue" : [@(batteryLevel) stringValue]
+                            @"infoKey"   : @"device_model",
+                            @"infoValue" : device_model
                             };
     [self.infoArray addObject:dict4];
 
@@ -109,45 +116,56 @@
                             };
     [self.infoArray addObject:dict7];
     
-    NSString *device_model = [[DeviceInfoManager sharedManager] getDeviceModel];
-    NSLog(@"device_model-->%@", device_model);
-    NSDictionary *dict8 = @{
-                             @"infoKey"   : @"device_model",
-                             @"infoValue" : device_model
-                             };
-    [self.infoArray addObject:dict8];
+    
     
     BOOL canMakePhoneCall = [DeviceInfoManager sharedManager].canMakePhoneCall;
     NSLog(@"能否打电话-->%d", canMakePhoneCall);
-    NSDictionary *dict9 = @{
+    NSDictionary *dict8 = @{
                              @"infoKey"   : @"能否打电话",
                              @"infoValue" : @(canMakePhoneCall)
                              };
-    [self.infoArray addObject:dict9];
+    [self.infoArray addObject:dict8];
     
     NSDate *systemUptime = [[DeviceInfoManager sharedManager] getSystemUptime];
     NSLog(@"systemUptime-->%@", systemUptime);
-    NSDictionary *dict10 = @{
+    NSDictionary *dict9 = @{
                             @"infoKey"   : @"设备上次重启的时间",
                             @"infoValue" : systemUptime
                             };
-    [self.infoArray addObject:dict10];
+    [self.infoArray addObject:dict9];
     
     NSUInteger busFrequency = [[DeviceInfoManager sharedManager] getBusFrequency];
     NSLog(@"busFrequency-->%lu", busFrequency);
-    NSDictionary *dict11 = @{
+    NSDictionary *dict10 = @{
                              @"infoKey"   : @"当前设备的总线频率Bus Frequency",
                              @"infoValue" : @(busFrequency)
                              };
-    [self.infoArray addObject:dict11];
+    [self.infoArray addObject:dict10];
     
     NSUInteger ramSize = [[DeviceInfoManager sharedManager] getRamSize];
     NSLog(@"ramSize-->%lu", ramSize);
-    NSDictionary *dict12 = @{
+    NSDictionary *dict11 = @{
                              @"infoKey"   : @"当前设备的主存大小(随机存取存储器（Random Access Memory)）",
                              @"infoValue" : @(ramSize)
                              };
-    [self.infoArray addObject:dict12];
+    [self.infoArray addObject:dict11];
+    
+}
+
+- (void)setupBatteryInfo {
+    
+    BatteryInfoManager *batteryManager = [BatteryInfoManager sharedManager];
+    batteryManager.delegate = self;
+    [batteryManager startBatteryMonitoring];
+    
+    CGFloat batteryLevel = [[UIDevice currentDevice] batteryLevel];
+    NSLog(@"电池电量-->%f", batteryLevel);
+    NSDictionary *dict1 = @{
+                            @"infoKey"   : @"电池电量",
+                            @"infoValue" : [@(batteryLevel) stringValue]
+                            };
+    [self.infoArray addObject:dict1];
+    
     
 }
 
