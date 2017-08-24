@@ -159,13 +159,20 @@
     [batteryManager startBatteryMonitoring];
     
     CGFloat batteryLevel = [[UIDevice currentDevice] batteryLevel];
-    NSLog(@"电池电量-->%f", batteryLevel);
+    NSLog(@"电池电量-->%.2f", batteryLevel);
     NSDictionary *dict1 = @{
                             @"infoKey"   : @"电池电量",
                             @"infoValue" : [@(batteryLevel) stringValue]
                             };
     [self.infoArray addObject:dict1];
     
+    NSString *batterStatus = batteryManager.status;
+    NSLog(@"电池状态-->%@", batterStatus);
+    NSDictionary *dict2 = @{
+                            @"infoKey"   : @"电池状态",
+                            @"infoValue" : batterStatus
+                            };
+    [self.infoArray addObject:dict2];
     
 }
 
@@ -377,6 +384,10 @@
     [self.infoArray addObject:dict15];
 }
 
+#pragma mark - BatteryInfoDelegate
+- (void)batteryStatusUpdated {
+    
+}
 
 #pragma mark - UITableViewDelegate && UITableViewDatasource
 
