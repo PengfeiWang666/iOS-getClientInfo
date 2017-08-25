@@ -17,7 +17,7 @@
 
 
 /** 获取设备型号 */
-- (NSString *)getDeviceName;
+- (const NSString *)getDeviceName;
 /** 获取mac地址 */
 - (NSString *)getMacAddress;
 /** 获取广告标识符 */

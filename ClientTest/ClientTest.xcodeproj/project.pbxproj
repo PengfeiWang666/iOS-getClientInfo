@@ -17,6 +17,7 @@
 		0F8AEC4E1D262754007827BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F8AEC4C1D262754007827BA /* LaunchScreen.storyboard */; };
 		0F8AEC591D262755007827BA /* ClientTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8AEC581D262755007827BA /* ClientTestTests.m */; };
 		0F8AEC641D262755007827BA /* ClientTestUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8AEC631D262755007827BA /* ClientTestUITests.m */; };
+		3524EF9A1F4E7D51001CF837 /* DeviceDataLibrery.m in Sources */ = {isa = PBXBuildFile; fileRef = 3524EF991F4E7D51001CF837 /* DeviceDataLibrery.m */; };
 		3525F6011F4D536C00C8FE8D /* NetWorkInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3525F6001F4D536C00C8FE8D /* NetWorkInfoManager.m */; };
 		356F36D21ECDB899001603AB /* BasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 356F36D11ECDB899001603AB /* BasicViewController.m */; };
 		356F36E41ECDCC36001603AB /* DeviceInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 356F36E31ECDCC36001603AB /* DeviceInfoManager.m */; };
@@ -61,6 +62,8 @@
 		0F8AEC5F1D262755007827BA /* ClientTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClientTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F8AEC631D262755007827BA /* ClientTestUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClientTestUITests.m; sourceTree = "<group>"; };
 		0F8AEC651D262755007827BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3524EF981F4E7D51001CF837 /* DeviceDataLibrery.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceDataLibrery.h; sourceTree = "<group>"; };
+		3524EF991F4E7D51001CF837 /* DeviceDataLibrery.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceDataLibrery.m; sourceTree = "<group>"; };
 		3525F5FF1F4D536C00C8FE8D /* NetWorkInfoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkInfoManager.h; sourceTree = "<group>"; };
 		3525F6001F4D536C00C8FE8D /* NetWorkInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkInfoManager.m; sourceTree = "<group>"; };
 		356F36D01ECDB899001603AB /* BasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicViewController.h; sourceTree = "<group>"; };
@@ -216,6 +219,8 @@
 				3525F6001F4D536C00C8FE8D /* NetWorkInfoManager.m */,
 				357CB0891F4D6E96006BFB52 /* BatteryInfoManager.h */,
 				357CB08A1F4D6E96006BFB52 /* BatteryInfoManager.m */,
+				3524EF981F4E7D51001CF837 /* DeviceDataLibrery.h */,
+				3524EF991F4E7D51001CF837 /* DeviceDataLibrery.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -372,6 +377,7 @@
 				0F8AEC431D262754007827BA /* AppDelegate.m in Sources */,
 				357CB08B1F4D6E96006BFB52 /* BatteryInfoManager.m in Sources */,
 				0F5D09FD1D26572900F3FDD3 /* WPFInfo.m in Sources */,
+				3524EF9A1F4E7D51001CF837 /* DeviceDataLibrery.m in Sources */,
 				356F36D21ECDB899001603AB /* BasicViewController.m in Sources */,
 				0F8AEC401D262754007827BA /* main.m in Sources */,
 			);

@@ -60,7 +60,7 @@
     
     self.navigationItem.title = @"Hardware Info";
     
-    NSString *deviceName = [[DeviceInfoManager sharedManager] getDeviceName];
+    const NSString *deviceName = [[DeviceInfoManager sharedManager] getDeviceName];
     NSLog(@"设备型号-->%@", deviceName);
     NSDictionary *dict1 = @{
                             @"infoKey"   : @"设备型号",
@@ -166,7 +166,7 @@
                             };
     [self.infoArray addObject:dict1];
     
-    NSString *batterStatus = batteryManager.status;
+    NSString *batterStatus = batteryManager.status ? : @"unkonwn";
     NSLog(@"电池状态-->%@", batterStatus);
     NSDictionary *dict2 = @{
                             @"infoKey"   : @"电池状态",
@@ -386,7 +386,7 @@
 
 #pragma mark - BatteryInfoDelegate
 - (void)batteryStatusUpdated {
-    
+#warning 当电池状态改变时，会调用该方法，应该在此处reload对应的cell，进行更新UI操作
 }
 
 #pragma mark - UITableViewDelegate && UITableViewDatasource

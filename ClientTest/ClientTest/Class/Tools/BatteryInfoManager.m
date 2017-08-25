@@ -43,8 +43,7 @@
         [device setBatteryMonitoringEnabled:YES];
         
         // If by any chance battery value is available - update it immediately
-        if ([device batteryState] != UIDeviceBatteryStateUnknown)
-        {
+        if ([device batteryState] != UIDeviceBatteryStateUnknown) {
             [self doUpdateBatteryStatus];
         }
     }
