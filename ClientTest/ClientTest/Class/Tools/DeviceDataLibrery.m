@@ -7,6 +7,7 @@
 //
 
 #import "DeviceDataLibrery.h"
+#import <UIKit/UIKit.h>
 #import "sys/utsname.h"
 
 // 设备型号的枚举值
@@ -255,6 +256,98 @@ static const NSString *iDeviceNameContainer[] = {
     [x86_64Simulator]           = @"x86_64Simulator",
     
     [iUnknown]                  = @"Unknown"
+};
+
+static const NSUInteger BatteryCapacityContainer[] = {
+    [iPhone_1G]         = 1400,
+    [iPhone_3G]         = 1150,
+    [iPhone_3GS]        = 1219,
+    [iPhone_4]          = 1420,
+    [iPhone_4_Verizon]  = 1420,
+    [iPhone_4S]         = 1430,
+    [iPhone_5_GSM]      = 1440,
+    [iPhone_5_CDMA]     = 1440,
+    [iPhone_5C_GSM]         = 1507,
+    [iPhone_5S_GSM_CDMA]         = 1570,
+    [iPhone_6]          = 1810,
+    [iPhone_6_Plus]     = 2915,
+    [iPhone_6S]         = 1715,
+    [iPhone_6S_Plus]    = 2750,
+    [iPod_Touch_1G]     = 789,
+    [iPod_Touch_2G]     = 789,
+    [iPod_Touch_3G]     = 930,
+    [iPod_Touch_4G]     = 930,
+    [iPod_Touch_5Gen]   = 1030,
+    [iPad_1]            = 6613,
+    [iPad_2_CDMA]       = 6930,
+    [iPad_2_GSM]        = 6930,
+    [iPad_2_WiFi]       = 6930,
+    [iPad_3_WiFi]       = 11560,
+    [iPad_3_GSM]        = 11560,
+    [iPad_3_CDMA]       = 11560,
+    [iPad_4_WiFi]       = 11560,
+    [iPad_4_GSM]        = 11560,
+    [iPad_4_CDMA]       = 11560,
+    [iPad_Air]          = 8827,
+    [iPad_Air_Cellular] = 8827,
+    [iPad_Air_2_WiFi]   = 7340,
+    [iPad_Air_2_Cellular] = 7340,
+//    [iPad_Pro]          = 10307,
+    [iPad_Mini_WiFi]    = 4440,
+    [iPad_Mini_GSM]     = 4440,
+    [iPad_Mini_CDMA]    = 4440,
+    [iPad_Mini_2]       = 6471,
+    [iPad_Mini_2_Cellular] = 6471,
+    [iPad_Mini_3_WiFi]       = 6471,
+    [iPad_Mini_3_Cellular] = 6471,
+    [iUnknown]          = 0
+};
+
+static const CGFloat BatteryVoltageContainer[] = {
+    [iPhone_1G]         = 3.7,
+    [iPhone_3G]         = 3.7,
+    [iPhone_3GS]        = 3.7,
+    [iPhone_4]          = 3.7,
+    [iPhone_4_Verizon]  = 3.7,
+    [iPhone_4S]         = 3.7,
+    [iPhone_5_GSM]      = 3.8,
+    [iPhone_5_CDMA]     = 3.8,
+    [iPhone_5C_GSM]     = 3.8,
+    [iPhone_5C_GSM_CDMA]= 3.8,
+    [iPhone_5S_GSM]     = 3.8,
+    [iPhone_5S_GSM_CDMA]= 3.8,
+    [iPhone_6]          = 3.82,
+    [iPhone_6_Plus]     = 3.82,
+    [iPhone_6S]         = 3.82,
+    [iPhone_6S_Plus]    = 3.8,
+    [iPod_Touch_1G]     = 3.7,
+    [iPod_Touch_2G]     = 3.7,
+    [iPod_Touch_3G]     = 3.7,
+    [iPod_Touch_4G]     = 3.7,
+    [iPod_Touch_5Gen]   = 3.8,
+    [iPad_1]            = 3.75,
+    [iPad_2_CDMA]       = 3.8,
+    [iPad_2_GSM]        = 3.8,
+    [iPad_2_WiFi]       = 3.8,
+    [iPad_3_WiFi]       = 3.7,
+    [iPad_3_GSM]        = 3.7,
+    [iPad_3_CDMA]       = 3.7,
+    [iPad_4_WiFi]       = 3.7,
+    [iPad_4_GSM]        = 3.7,
+    [iPad_4_CDMA]       = 3.7,
+    [iPad_Air]          = 3.73,
+    [iPad_Air_Cellular] = 3.73,
+    [iPad_Air_2_WiFi]   = 3.76,
+    [iPad_Air_2_Cellular] = 3.76,
+//    [iPad_Pro]          = 3.77,
+    [iPad_Mini_WiFi]    = 3.72,
+    [iPad_Mini_GSM]     = 3.72,
+    [iPad_Mini_CDMA]    = 3.72,
+    [iPad_Mini_2]       = 3.75,
+    [iPad_Mini_2_Cellular] = 3.75,
+    [iPad_Mini_3_WiFi]     = 3.75,
+    [iPad_Mini_3_Cellular] = 3.75,
+    [iUnknown]             = 0
 };
 
 
