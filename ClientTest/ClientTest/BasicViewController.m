@@ -159,20 +159,39 @@
     [batteryManager startBatteryMonitoring];
     
     CGFloat batteryLevel = [[UIDevice currentDevice] batteryLevel];
-    NSLog(@"电池电量-->%.2f", batteryLevel);
+    NSString *levelValue = [NSString stringWithFormat:@"%.2f", batteryLevel];
+    NSLog(@"电池电量-->%@", levelValue);
     NSDictionary *dict1 = @{
                             @"infoKey"   : @"电池电量",
-                            @"infoValue" : [@(batteryLevel) stringValue]
+                            @"infoValue" : levelValue
                             };
     [self.infoArray addObject:dict1];
     
+    NSInteger batterCapacity = batteryManager.capacity;
+    NSString *capacityValue = [NSString stringWithFormat:@"%ld mA", batterCapacity];
+    NSLog(@"电池容量-->%@", capacityValue);
+    NSDictionary *dict2 = @{
+                            @"infoKey"   : @"电池容量",
+                            @"infoValue" : capacityValue
+                            };
+    [self.infoArray addObject:dict2];
+    
+    CGFloat batteryVoltage = batteryManager.voltage;
+    NSString *voltageValue = [NSString stringWithFormat:@"%.2f V", batteryVoltage];
+    NSLog(@"电池电压-->%@", voltageValue);
+    NSDictionary *dict3 = @{
+                            @"infoKey"   : @"电池电压",
+                            @"infoValue" : voltageValue
+                            };
+    [self.infoArray addObject:dict3];
+    
     NSString *batterStatus = batteryManager.status ? : @"unkonwn";
     NSLog(@"电池状态-->%@", batterStatus);
-    NSDictionary *dict2 = @{
+    NSDictionary *dict4 = @{
                             @"infoKey"   : @"电池状态",
                             @"infoValue" : batterStatus
                             };
-    [self.infoArray addObject:dict2];
+    [self.infoArray addObject:dict4];
     
 }
 

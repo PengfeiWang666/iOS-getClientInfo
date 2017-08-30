@@ -7,7 +7,7 @@
 //
 
 #import "BatteryInfoManager.h"
-
+#import "DeviceDataLibrery.h"
 
 @interface BatteryInfoManager ()
 
@@ -95,6 +95,15 @@
     }
     
     [self.delegate batteryStatusUpdated];
+}
+
+#pragma mark - Setters && Getters
+- (CGFloat)voltage {
+    return [[DeviceDataLibrery sharedLibrery] getBatterVolocity];
+}
+
+- (NSUInteger)capacity {
+    return [[DeviceDataLibrery sharedLibrery] getBatteryCapacity];
 }
 
 @end
