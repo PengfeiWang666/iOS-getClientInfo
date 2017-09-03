@@ -12,6 +12,7 @@ typedef NS_ENUM(NSUInteger, BasicInfoType) {
     BasicInfoTypeHardWare,
     BasicInfoTypeBattery,
     BasicInfoTypeIpAddress,
+    BasicInfoTypeCPU,
     BasicInfoTypeDisk,
 };
 

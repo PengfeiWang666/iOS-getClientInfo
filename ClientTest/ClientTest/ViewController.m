@@ -36,6 +36,12 @@
     BasicViewController *addressVC = [[BasicViewController alloc] initWIthType:BasicInfoTypeIpAddress];
     [self.navigationController pushViewController:addressVC  animated:YES];
 }
+
+- (IBAction)CPUInfoButtonTapped:(id)sender {
+    BasicViewController *dickVC = [[BasicViewController alloc] initWIthType:BasicInfoTypeCPU];
+    [self.navigationController pushViewController:dickVC  animated:YES];
+}
+
 - (IBAction)diskInfoButtonTapped:(id)sender {
     BasicViewController *dickVC = [[BasicViewController alloc] initWIthType:BasicInfoTypeDisk];
     [self.navigationController pushViewController:dickVC  animated:YES];

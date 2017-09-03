@@ -31,12 +31,14 @@
 /** 获取当前设备主存 */
 - (NSUInteger)getRamSize;
 
+- (NSString *)getCPUProcessor;
 /** 获取CPU数量 */
 - (NSUInteger)getCPUCount;
 /** 获取CPU总的使用百分比 */
 - (float)getCPUUsage;
 /** 获取单个CPU使用百分比 */
 - (NSArray *)getPerCPUUsage;
+
 
 /** 获取本 App 所占磁盘空间 */
 - (NSString *)getApplicationSize;

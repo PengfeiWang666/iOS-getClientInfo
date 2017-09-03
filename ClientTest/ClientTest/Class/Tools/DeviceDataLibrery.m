@@ -116,6 +116,10 @@ typedef NS_ENUM(NSUInteger, DiviceType) {
     return BatteryVoltageContainer[self.iDevice];
 }
 
+- (const NSString *)getCPUProcessor {
+    return CPUNameContainer[self.iDevice];
+}
+
 #pragma mark - Private Method
 + (DiviceType)transformMachineToIdevice{
     // 需要#import "sys/utsname.h"

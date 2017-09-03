@@ -138,6 +138,10 @@
     return [self getSystemInfo:HW_MEMSIZE];
 }
 
+- (NSString *)getCPUProcessor {
+    return [[DeviceDataLibrery sharedLibrery] getCPUProcessor] ? : @"unKnown";
+}
+
 #pragma mark - CPU
 - (NSUInteger)getCPUCount {
     return [NSProcessInfo processInfo].activeProcessorCount;

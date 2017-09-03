@@ -32,6 +32,8 @@
             [self setupBatteryInfo];
         } else if (type == BasicInfoTypeIpAddress) {
             [self setupAddressInfo];
+        } else if (type == BasicInfoTypeCPU){
+            [self setupCPUInfo];
         } else if (type == BasicInfoTypeDisk){
             [self setupDiskInfo];
         }
@@ -265,32 +267,40 @@
     
 }
 
-- (void)setupDiskInfo {
-    self.navigationItem.title = @"Disk && Memory";
+- (void)setupCPUInfo {
+    self.navigationItem.title = @"CPU Info";
     
-    NSUInteger cpuCount = [[DeviceInfoManager sharedManager] getCPUCount];
-    NSLog(@"cpuCount-->%ld", cpuCount);
+    NSString *cpuName = [[DeviceInfoManager sharedManager] getCPUProcessor];
+    NSLog(@"cpuName-->%@", cpuName);
     NSDictionary *dict1 = @{
-                            @"infoKey"   : @"CPU总数目",
-                            @"infoValue" : @(cpuCount)
+                            @"infoKey"   : @"CPU 处理器",
+                            @"infoValue" : cpuName
                             };
     [self.infoArray addObject:dict1];
     
-    CGFloat cpuUsage = [[DeviceInfoManager sharedManager] getCPUUsage];
-    NSLog(@"cpuUsage-->%f", cpuUsage);
+    NSUInteger cpuCount = [[DeviceInfoManager sharedManager] getCPUCount];
+    NSLog(@"cpuCount-->%ld", cpuCount);
     NSDictionary *dict2 = @{
-                            @"infoKey"   : @"CPU使用的总比例",
-                            @"infoValue" : @(cpuUsage)
+                            @"infoKey"   : @"CPU总数目",
+                            @"infoValue" : @(cpuCount)
                             };
     [self.infoArray addObject:dict2];
     
+    CGFloat cpuUsage = [[DeviceInfoManager sharedManager] getCPUUsage];
+    NSLog(@"cpuUsage-->%f", cpuUsage);
+    NSDictionary *dict3 = @{
+                            @"infoKey"   : @"CPU使用的总比例",
+                            @"infoValue" : @(cpuUsage)
+                            };
+    [self.infoArray addObject:dict3];
+    
     NSUInteger cpuFrequency = [[DeviceInfoManager sharedManager] getCPUFrequency];
     NSLog(@"cpuFrequency-->%lu", cpuFrequency);
-    NSDictionary *dict3 = @{
-                             @"infoKey"   : @"CPU 频率",
-                             @"infoValue" : @(cpuFrequency)
-                             };
-    [self.infoArray addObject:dict3];
+    NSDictionary *dict4 = @{
+                            @"infoKey"   : @"CPU 频率",
+                            @"infoValue" : @(cpuFrequency)
+                            };
+    [self.infoArray addObject:dict4];
     
     NSArray *perCPUArr = [[DeviceInfoManager sharedManager] getPerCPUUsage];
     NSMutableString *perCPUUsage = [NSMutableString string];
@@ -299,11 +309,15 @@
         [perCPUUsage appendFormat:@"%.2f<-->", per.floatValue];
     }
     NSLog(@"单个CPU使用比例-->%@", perCPUUsage);
-    NSDictionary *dict4 = @{
+    NSDictionary *dict5 = @{
                             @"infoKey"   : @"单个CPU使用比例",
                             @"infoValue" : perCPUUsage
                             };
-    [self.infoArray addObject:dict4];
+    [self.infoArray addObject:dict5];
+}
+
+- (void)setupDiskInfo {
+    self.navigationItem.title = @"Disk && Memory";
     
     NSString *applicationSize = [[DeviceInfoManager sharedManager] getApplicationSize];
     NSDictionary *dict5 = @{

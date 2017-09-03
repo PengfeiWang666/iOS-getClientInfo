@@ -41,10 +41,10 @@
                                 <rect key="frame" x="46" y="164" width="283" height="403"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b4h-JV-cQP">
-                                        <rect key="frame" x="0.0" y="0.0" width="283" height="101"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="283" height="80.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="trf-4J-4fq">
-                                                <rect key="frame" x="10" y="25.5" width="263" height="50"/>
+                                                <rect key="frame" x="10" y="15.5" width="263" height="50"/>
                                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="hOn-W6-3mA"/>
@@ -64,10 +64,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ICg-iE-53Q">
-                                        <rect key="frame" x="0.0" y="101" width="283" height="100.5"/>
+                                        <rect key="frame" x="0.0" y="80.5" width="283" height="80.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iwm-pa-XWz">
-                                                <rect key="frame" x="10" y="25.5" width="263" height="50"/>
+                                                <rect key="frame" x="10" y="15.5" width="263" height="50"/>
                                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="1sX-bo-twz"/>
@@ -87,10 +87,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cQe-11-Xyi">
-                                        <rect key="frame" x="0.0" y="201.5" width="283" height="101"/>
+                                        <rect key="frame" x="0.0" y="161" width="283" height="81"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZx-kS-Ora">
-                                                <rect key="frame" x="10" y="25.5" width="263" height="50"/>
+                                                <rect key="frame" x="10" y="15.5" width="263" height="50"/>
                                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="m6K-i6-g8G"/>
@@ -110,17 +110,17 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mm3-Qz-gya">
-                                        <rect key="frame" x="0.0" y="302.5" width="283" height="100.5"/>
+                                        <rect key="frame" x="0.0" y="242" width="283" height="80.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9te-rA-fgP">
-                                                <rect key="frame" x="10" y="26" width="263" height="50"/>
+                                                <rect key="frame" x="10" y="16" width="263" height="50"/>
                                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="KQp-WS-5ji"/>
                                                 </constraints>
-                                                <state key="normal" title=" CPU &amp;&amp; Disk &amp;&amp; Memory"/>
+                                                <state key="normal" title=" CPU Info"/>
                                                 <connections>
-                                                    <action selector="diskInfoButtonTapped:" destination="hd4-yH-mMf" eventType="touchUpInside" id="LBj-dX-kMi"/>
+                                                    <action selector="CPUInfoButtonTapped:" destination="hd4-yH-mMf" eventType="touchUpInside" id="uX5-ub-BMr"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -130,6 +130,29 @@
                                             <constraint firstItem="9te-rA-fgP" firstAttribute="centerX" secondItem="mm3-Qz-gya" secondAttribute="centerX" id="Ehh-7y-Yix"/>
                                             <constraint firstAttribute="trailing" secondItem="9te-rA-fgP" secondAttribute="trailing" constant="10" id="UJJ-81-P34"/>
                                             <constraint firstItem="9te-rA-fgP" firstAttribute="leading" secondItem="mm3-Qz-gya" secondAttribute="leading" constant="10" id="iRJ-r8-mpA"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HuW-Ds-FVq">
+                                        <rect key="frame" x="0.0" y="322.5" width="283" height="80.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oAu-6L-ADU">
+                                                <rect key="frame" x="10" y="16" width="263" height="50"/>
+                                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="Jbf-oS-WKa"/>
+                                                </constraints>
+                                                <state key="normal" title="Disk &amp;&amp; Memory"/>
+                                                <connections>
+                                                    <action selector="diskInfoButtonTapped:" destination="hd4-yH-mMf" eventType="touchUpInside" id="TAu-te-2bL"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="oAu-6L-ADU" firstAttribute="leading" secondItem="HuW-Ds-FVq" secondAttribute="leading" constant="10" id="6f2-YM-RVO"/>
+                                            <constraint firstItem="oAu-6L-ADU" firstAttribute="centerX" secondItem="HuW-Ds-FVq" secondAttribute="centerX" id="Gyh-DX-qft"/>
+                                            <constraint firstAttribute="trailing" secondItem="oAu-6L-ADU" secondAttribute="trailing" constant="10" id="Pgf-v2-Ru2"/>
+                                            <constraint firstItem="oAu-6L-ADU" firstAttribute="centerY" secondItem="HuW-Ds-FVq" secondAttribute="centerY" id="r8L-Lq-CLj"/>
                                         </constraints>
                                     </view>
                                 </subviews>

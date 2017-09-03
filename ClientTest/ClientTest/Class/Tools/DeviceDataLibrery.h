@@ -18,5 +18,7 @@
 - (NSInteger)getBatteryCapacity;
 /** 获取电池电压，单位 V 福特 */
 - (CGFloat)getBatterVolocity;
+/** 获取CPU处理器名称 */
+- (const NSString *)getCPUProcessor;
 
 @end
