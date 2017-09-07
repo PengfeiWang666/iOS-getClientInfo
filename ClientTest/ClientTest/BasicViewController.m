@@ -169,8 +169,8 @@
                             };
     [self.infoArray addObject:dict1];
     
-    NSInteger batterCapacity = batteryManager.capacity;
-    NSString *capacityValue = [NSString stringWithFormat:@"%ld mA", batterCapacity];
+    NSInteger batteryCapacity = batteryManager.capacity;
+    NSString *capacityValue = [NSString stringWithFormat:@"%ld mA", batteryCapacity];
     NSLog(@"电池容量-->%@", capacityValue);
     NSDictionary *dict2 = @{
                             @"infoKey"   : @"电池容量",
@@ -178,22 +178,31 @@
                             };
     [self.infoArray addObject:dict2];
     
-    CGFloat batteryVoltage = batteryManager.voltage;
-    NSString *voltageValue = [NSString stringWithFormat:@"%.2f V", batteryVoltage];
-    NSLog(@"电池电压-->%@", voltageValue);
+    CGFloat batteryMAH = batteryCapacity * batteryLevel;
+    NSString *mahValue = [NSString stringWithFormat:@"%.2f mA", batteryMAH];
+    NSLog(@"当前电池剩余电量-->%@", mahValue);
     NSDictionary *dict3 = @{
-                            @"infoKey"   : @"电池电压",
-                            @"infoValue" : voltageValue
+                            @"infoKey"   : @"当前电池剩余电量",
+                            @"infoValue" : mahValue
                             };
     [self.infoArray addObject:dict3];
     
+    CGFloat batteryVoltage = batteryManager.voltage;
+    NSString *voltageValue = [NSString stringWithFormat:@"%.2f V", batteryVoltage];
+    NSLog(@"电池电压-->%@", voltageValue);
+    NSDictionary *dict4 = @{
+                            @"infoKey"   : @"电池电压",
+                            @"infoValue" : voltageValue
+                            };
+    [self.infoArray addObject:dict4];
+    
     NSString *batterStatus = batteryManager.status ? : @"unkonwn";
     NSLog(@"电池状态-->%@", batterStatus);
-    NSDictionary *dict4 = @{
+    NSDictionary *dict5 = @{
                             @"infoKey"   : @"电池状态",
                             @"infoValue" : batterStatus
                             };
-    [self.infoArray addObject:dict4];
+    [self.infoArray addObject:dict5];
     
 }
 
