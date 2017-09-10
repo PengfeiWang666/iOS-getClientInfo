@@ -462,6 +462,10 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.myTableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
 #pragma mark - setters && getters
 - (NSMutableArray *)infoArray {
     if (!_infoArray) {
