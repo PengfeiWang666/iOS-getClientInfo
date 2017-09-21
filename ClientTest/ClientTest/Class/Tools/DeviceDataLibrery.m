@@ -33,6 +33,9 @@ typedef NS_ENUM(NSUInteger, DiviceType) {
     Chinese_iPhone_7_Plus,
     American_iPhone_7,
     American_iPhone_7_Plus,
+    iPhone_8,
+    iPhone_8_Plus,
+    iPhone_X,
     
     iPod_Touch_1G,
     iPod_Touch_2G,
@@ -151,6 +154,12 @@ typedef NS_ENUM(NSUInteger, DiviceType) {
     if ([machineString isEqualToString:@"iPhone9,2"])   return Chinese_iPhone_7_Plus;
     if ([machineString isEqualToString:@"iPhone9,3"])   return American_iPhone_7;
     if ([machineString isEqualToString:@"iPhone9,4"])   return American_iPhone_7_Plus;
+    if ([machineString isEqualToString:@"iPhone10,1"])   return iPhone_8;
+    if ([machineString isEqualToString:@"iPhone10,4"])   return iPhone_8;
+    if ([machineString isEqualToString:@"iPhone10,2"])   return iPhone_8_Plus;
+    if ([machineString isEqualToString:@"iPhone10,5"])   return iPhone_8_Plus;
+    if ([machineString isEqualToString:@"iPhone10,3"])   return iPhone_X;
+    if ([machineString isEqualToString:@"iPhone10,6"])   return iPhone_X;
     
     if ([machineString isEqualToString:@"iPod1,1"])     return iPod_Touch_1G;
     if ([machineString isEqualToString:@"iPod2,1"])     return iPod_Touch_2G;
@@ -224,6 +233,9 @@ static const NSString *iDeviceNameContainer[] = {
     [Chinese_iPhone_7_Plus]     = @"港行/国行iPhone_7_Plus",
     [American_iPhone_7]         = @"美版/台版iPhone_7",
     [American_iPhone_7_Plus]    = @"美版/台版iPhone_7_Plus",
+    [iPhone_8]                  = @"iPhone 8",
+    [iPhone_8_Plus]             = @"iPhone 8 Plus",
+    [iPhone_X]                  = @"iPhone X",
     
     [iPod_Touch_1G]             = @"iPod Touch 1G",
     [iPod_Touch_2G]             = @"iPod Touch 2G",
