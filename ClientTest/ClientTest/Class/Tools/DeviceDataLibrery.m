@@ -303,6 +303,9 @@ static const NSUInteger BatteryCapacityContainer[] = {
     [American_iPhone_7]         = 1960,
     [Chinese_iPhone_7_Plus]     = 2900,
     [American_iPhone_7_Plus]    = 2900,
+    [iPhone_8]                  = 1821,
+    [iPhone_8_Plus]             = 2691,
+    
     
     [iPod_Touch_1G]             = 789,
     [iPod_Touch_2G]             = 789,
@@ -360,6 +363,8 @@ static const CGFloat BatteryVoltageContainer[] = {
     [Chinese_iPhone_7]          = 3.8,
     [American_iPhone_7_Plus]    = 3.82,
     [Chinese_iPhone_7_Plus]     = 3.82,
+    [iPhone_8]                  = 3.82,
+    [iPhone_8_Plus]             = 3.82,
     
     [iPod_Touch_1G]             = 3.7,
     [iPod_Touch_2G]             = 3.7,
