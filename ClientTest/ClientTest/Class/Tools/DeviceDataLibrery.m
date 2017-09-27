@@ -284,6 +284,12 @@ static const NSString *iDeviceNameContainer[] = {
     [iPad_Pro_97inch_Cellular]  = @"iPad Pro 9.7 inch(Cellular)",
     [iPad_Pro_129inch_WiFi]     = @"iPad Pro 12.9 inch(WiFi)",
     [iPad_Pro_129inch_Cellular] = @"iPad Pro 12.9 inch(Cellular)",
+    [iPad_5_WiFi]               = @"iPad 5(WiFi)",
+    [iPad_5_Cellular]           = @"iPad 5(Cellular)",
+    [iPad_Pro_129inch_2nd_gen_WiFi]     = @"iPad Pro 12.9 inch(2nd generation)(WiFi)",
+    [iPad_Pro_129inch_2nd_gen_Cellular] = @"iPad Pro 12.9 inch(2nd generation)(Cellular)",
+    [iPad_Pro_105inch_WiFi]             = @"iPad Pro 10.5 inch(WiFi)",
+    [iPad_Pro_105inch_Cellular]         = @"iPad Pro 10.5 inch(Cellular)",
     
     [appleTV2]                  = @"appleTV2",
     [appleTV3]                  = @"appleTV3",
