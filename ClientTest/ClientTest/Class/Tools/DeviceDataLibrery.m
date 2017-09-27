@@ -80,8 +80,8 @@ typedef NS_ENUM(NSUInteger, DiviceType) {
     iPad_5_Cellular,
     iPad_Pro_129inch_2nd_gen_WiFi,
     iPad_Pro_129inch_2nd_gen_Cellular,
-    iPad_Pro_109inch_WiFi,
-    iPad_Pro_109inch_Cellular,
+    iPad_Pro_105inch_WiFi,
+    iPad_Pro_105inch_Cellular,
     
     appleTV2,
     appleTV3,
@@ -205,13 +205,12 @@ typedef NS_ENUM(NSUInteger, DiviceType) {
     if ([machineString isEqualToString:@"iPad6,7"])     return iPad_Pro_129inch_WiFi;
     if ([machineString isEqualToString:@"iPad6,8"])     return iPad_Pro_129inch_Cellular;
     
-    
     if ([machineString isEqualToString:@"iPad6,11"])     return iPad_5_WiFi;
     if ([machineString isEqualToString:@"iPad6,12"])     return iPad_5_Cellular;
     if ([machineString isEqualToString:@"iPad7,1"])     return iPad_Pro_129inch_2nd_gen_WiFi;
     if ([machineString isEqualToString:@"iPad7,2"])     return iPad_Pro_129inch_2nd_gen_Cellular;
-    if ([machineString isEqualToString:@"iPad7,3"])     return iPad_5_WiFi;
-    if ([machineString isEqualToString:@"iPad7,4"])     return iPad_5_Cellular;
+    if ([machineString isEqualToString:@"iPad7,3"])     return iPad_Pro_105inch_WiFi;
+    if ([machineString isEqualToString:@"iPad7,4"])     return iPad_Pro_105inch_Cellular;
     
     if ([machineString isEqualToString:@"AppleTV2,1"])  return appleTV2;
     if ([machineString isEqualToString:@"AppleTV3,1"])  return appleTV3;
