@@ -76,6 +76,12 @@ typedef NS_ENUM(NSUInteger, DiviceType) {
     iPad_Mini_3_Cellular,
     iPad_Mini_4_WiFi,
     iPad_Mini_4_Cellular,
+    iPad_5_WiFi,
+    iPad_5_Cellular,
+    iPad_Pro_129inch_2nd_gen_WiFi,
+    iPad_Pro_129inch_2nd_gen_Cellular,
+    iPad_Pro_109inch_WiFi,
+    iPad_Pro_109inch_Cellular,
     
     appleTV2,
     appleTV3,
@@ -198,6 +204,14 @@ typedef NS_ENUM(NSUInteger, DiviceType) {
     if ([machineString isEqualToString:@"iPad6,4"])     return iPad_Pro_97inch_Cellular;
     if ([machineString isEqualToString:@"iPad6,7"])     return iPad_Pro_129inch_WiFi;
     if ([machineString isEqualToString:@"iPad6,8"])     return iPad_Pro_129inch_Cellular;
+    
+    
+    if ([machineString isEqualToString:@"iPad6,11"])     return iPad_5_WiFi;
+    if ([machineString isEqualToString:@"iPad6,12"])     return iPad_5_Cellular;
+    if ([machineString isEqualToString:@"iPad7,1"])     return iPad_Pro_129inch_2nd_gen_WiFi;
+    if ([machineString isEqualToString:@"iPad7,2"])     return iPad_Pro_129inch_2nd_gen_Cellular;
+    if ([machineString isEqualToString:@"iPad7,3"])     return iPad_5_WiFi;
+    if ([machineString isEqualToString:@"iPad7,4"])     return iPad_5_Cellular;
     
     if ([machineString isEqualToString:@"AppleTV2,1"])  return appleTV2;
     if ([machineString isEqualToString:@"AppleTV3,1"])  return appleTV3;
@@ -479,6 +493,9 @@ static const NSString *CPUNameContainer[] = {
     [American_iPhone_7]         = @"Apple A10",
     [American_iPhone_7_Plus]    = @"Apple A10",
     [Chinese_iPhone_7_Plus]     = @"Apple A10",
+    [iPhone_8]                  = @"Apple A11",
+    [iPhone_8_Plus]             = @"Apple A11",
+    [iPhone_X]                  = @"Apple A11",
     
     [iPod_Touch_1G]             = @"ARM 1176JZ",
     [iPod_Touch_2G]             = @"ARM 1176JZ",
