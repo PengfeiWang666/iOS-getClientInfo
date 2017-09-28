@@ -325,7 +325,6 @@ static const NSUInteger BatteryCapacityContainer[] = {
     [iPhone_8]                  = 1821,
     [iPhone_8_Plus]             = 2691,
     
-    
     [iPod_Touch_1G]             = 789,
     [iPod_Touch_2G]             = 789,
     [iPod_Touch_3G]             = 930,
@@ -533,6 +532,11 @@ static const NSString *CPUNameContainer[] = {
     [iPad_Pro_97inch_Cellular]  = @"Apple A9X",
     [iPad_Pro_129inch_WiFi]     = @"Apple A9X",
     [iPad_Pro_129inch_Cellular] = @"Apple A9X",
+    [iPad_Pro_129inch_2nd_gen_WiFi]     = @"Apple A10X",
+    [iPad_Pro_129inch_2nd_gen_Cellular] = @"Apple A10X",
+    [iPad_Pro_105inch_WiFi]             = @"Apple A10X",
+    [iPad_Pro_105inch_Cellular]         = @"Apple A10X",
+    
     
     [iUnknown]                  = @"Unknown"
 };
