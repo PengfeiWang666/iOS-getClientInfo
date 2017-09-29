@@ -414,6 +414,11 @@ static const CGFloat BatteryVoltageContainer[] = {
     [iPad_Pro_97inch_Cellular]  = 3.82,
     [iPad_Pro_129inch_WiFi]     = 3.77,
     [iPad_Pro_129inch_Cellular] = 3.77,
+    [iPad_5_WiFi]               = 3.73,
+    [iPad_5_Cellular]           = 3.73,
+    [iPad_Pro_105inch_WiFi]     = 3.77,
+    [iPad_Pro_105inch_Cellular] = 3.77,
+    
     [iUnknown]                  = 0
 };
 
