@@ -355,6 +355,11 @@ static const NSUInteger BatteryCapacityContainer[] = {
     [iPad_Pro_97inch_Cellular]  = 7306,
     [iPad_Pro_129inch_WiFi]     = 10307,
     [iPad_Pro_129inch_Cellular] = 10307,
+    [iPad_5_WiFi]               = 8820,
+    [iPad_5_Cellular]           = 8820,
+    [iPad_Pro_105inch_WiFi]     = 8134,
+    [iPad_Pro_105inch_Cellular] = 8134,
+    
     [iUnknown]                  = 0
 };
 
