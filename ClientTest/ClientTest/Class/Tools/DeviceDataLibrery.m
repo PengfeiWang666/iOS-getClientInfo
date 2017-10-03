@@ -482,6 +482,13 @@ static const NSUInteger CPUFrequencyContainer[] = {
     [iPad_Pro_97inch_Cellular]  = 2160,
     [iPad_Pro_129inch_WiFi]     = 2240,
     [iPad_Pro_129inch_Cellular] = 2240,
+    [iPad_5_WiFi]               = 1850,
+    [iPad_5_Cellular]           = 1850,
+    [iPad_Pro_129inch_2nd_gen_WiFi]     = 2380,
+    [iPad_Pro_129inch_2nd_gen_Cellular] = 2380,
+    [iPad_Pro_105inch_WiFi]             = 2380,
+    [iPad_Pro_105inch_Cellular]         = 2380,
+    
     [iUnknown]                  = 0
 };
 
