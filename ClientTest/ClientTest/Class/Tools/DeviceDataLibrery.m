@@ -554,8 +554,7 @@ static const NSString *CPUNameContainer[] = {
     [iPad_Pro_105inch_WiFi]             = @"Apple A10X",
     [iPad_Pro_105inch_Cellular]         = @"Apple A10X",
     
-    
-    [iUnknown]                  = @"Unknown"
+    [iUnknown]                          = @"Unknown"
 };
 
 

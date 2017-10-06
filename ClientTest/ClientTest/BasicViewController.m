@@ -50,6 +50,14 @@
     self.myTableView.rowHeight = 80;
     
     [self.view addSubview:self.myTableView];
+    
+    if (@available(iOS 11.0, *)) {
+        self.navigationController.navigationBar.prefersLargeTitles = YES;
+        self.navigationController.navigationBar.largeTitleTextAttributes = @{      
+                                                     NSFontAttributeName:[UIFont fontWithName:@"PingFangSC-Medium" size:28],
+                                          NSForegroundColorAttributeName:[UIColor blackColor],
+                                                     };
+    }
 }
 
 - (void)dealloc {
