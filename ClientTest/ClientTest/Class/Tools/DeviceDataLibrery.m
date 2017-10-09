@@ -160,12 +160,12 @@ typedef NS_ENUM(NSUInteger, DiviceType) {
     if ([machineString isEqualToString:@"iPhone9,2"])   return Chinese_iPhone_7_Plus;
     if ([machineString isEqualToString:@"iPhone9,3"])   return American_iPhone_7;
     if ([machineString isEqualToString:@"iPhone9,4"])   return American_iPhone_7_Plus;
-    if ([machineString isEqualToString:@"iPhone10,1"])   return iPhone_8;
-    if ([machineString isEqualToString:@"iPhone10,4"])   return iPhone_8;
-    if ([machineString isEqualToString:@"iPhone10,2"])   return iPhone_8_Plus;
-    if ([machineString isEqualToString:@"iPhone10,5"])   return iPhone_8_Plus;
-    if ([machineString isEqualToString:@"iPhone10,3"])   return iPhone_X;
-    if ([machineString isEqualToString:@"iPhone10,6"])   return iPhone_X;
+    if ([machineString isEqualToString:@"iPhone10,1"])  return iPhone_8;
+    if ([machineString isEqualToString:@"iPhone10,4"])  return iPhone_8;
+    if ([machineString isEqualToString:@"iPhone10,2"])  return iPhone_8_Plus;
+    if ([machineString isEqualToString:@"iPhone10,5"])  return iPhone_8_Plus;
+    if ([machineString isEqualToString:@"iPhone10,3"])  return iPhone_X;
+    if ([machineString isEqualToString:@"iPhone10,6"])  return iPhone_X;
     
     if ([machineString isEqualToString:@"iPod1,1"])     return iPod_Touch_1G;
     if ([machineString isEqualToString:@"iPod2,1"])     return iPod_Touch_2G;
@@ -205,8 +205,8 @@ typedef NS_ENUM(NSUInteger, DiviceType) {
     if ([machineString isEqualToString:@"iPad6,7"])     return iPad_Pro_129inch_WiFi;
     if ([machineString isEqualToString:@"iPad6,8"])     return iPad_Pro_129inch_Cellular;
     
-    if ([machineString isEqualToString:@"iPad6,11"])     return iPad_5_WiFi;
-    if ([machineString isEqualToString:@"iPad6,12"])     return iPad_5_Cellular;
+    if ([machineString isEqualToString:@"iPad6,11"])    return iPad_5_WiFi;
+    if ([machineString isEqualToString:@"iPad6,12"])    return iPad_5_Cellular;
     if ([machineString isEqualToString:@"iPad7,1"])     return iPad_Pro_129inch_2nd_gen_WiFi;
     if ([machineString isEqualToString:@"iPad7,2"])     return iPad_Pro_129inch_2nd_gen_Cellular;
     if ([machineString isEqualToString:@"iPad7,3"])     return iPad_Pro_105inch_WiFi;
