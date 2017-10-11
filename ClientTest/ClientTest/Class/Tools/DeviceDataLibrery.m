@@ -33,9 +33,12 @@ typedef NS_ENUM(NSUInteger, DiviceType) {
     Chinese_iPhone_7_Plus,
     American_iPhone_7,
     American_iPhone_7_Plus,
-    iPhone_8,
-    iPhone_8_Plus,
-    iPhone_X,
+    Chinese_iPhone_8,
+    Chinese_iPhone_8_Plus,
+    Chinese_iPhone_X,
+    Global_iPhone_8,
+    Global_iPhone_8_Plus,
+    Global_iPhone_X,
     
     iPod_Touch_1G,
     iPod_Touch_2G,
@@ -160,12 +163,12 @@ typedef NS_ENUM(NSUInteger, DiviceType) {
     if ([machineString isEqualToString:@"iPhone9,2"])   return Chinese_iPhone_7_Plus;
     if ([machineString isEqualToString:@"iPhone9,3"])   return American_iPhone_7;
     if ([machineString isEqualToString:@"iPhone9,4"])   return American_iPhone_7_Plus;
-    if ([machineString isEqualToString:@"iPhone10,1"])  return iPhone_8;
-    if ([machineString isEqualToString:@"iPhone10,4"])  return iPhone_8;
-    if ([machineString isEqualToString:@"iPhone10,2"])  return iPhone_8_Plus;
-    if ([machineString isEqualToString:@"iPhone10,5"])  return iPhone_8_Plus;
-    if ([machineString isEqualToString:@"iPhone10,3"])  return iPhone_X;
-    if ([machineString isEqualToString:@"iPhone10,6"])  return iPhone_X;
+    if ([machineString isEqualToString:@"iPhone10,1"])  return Chinese_iPhone_8;
+    if ([machineString isEqualToString:@"iPhone10,4"])  return Global_iPhone_8;
+    if ([machineString isEqualToString:@"iPhone10,2"])  return Global_iPhone_8;
+    if ([machineString isEqualToString:@"iPhone10,5"])  return Global_iPhone_8_Plus;
+    if ([machineString isEqualToString:@"iPhone10,3"])  return Chinese_iPhone_X;
+    if ([machineString isEqualToString:@"iPhone10,6"])  return Global_iPhone_X;
     
     if ([machineString isEqualToString:@"iPod1,1"])     return iPod_Touch_1G;
     if ([machineString isEqualToString:@"iPod2,1"])     return iPod_Touch_2G;
@@ -242,13 +245,16 @@ static const NSString *iDeviceNameContainer[] = {
     [iPhone_6S]                 = @"iPhone 6S",
     [iPhone_6S_Plus]            = @"iPhone 6S Plus",
     [iPhone_SE]                 = @"iPhone SE",
-    [Chinese_iPhone_7]          = @"国行/日版/港行iPhone_7",
-    [Chinese_iPhone_7_Plus]     = @"港行/国行iPhone_7_Plus",
-    [American_iPhone_7]         = @"美版/台版iPhone_7",
-    [American_iPhone_7_Plus]    = @"美版/台版iPhone_7_Plus",
-    [iPhone_8]                  = @"iPhone 8",
-    [iPhone_8_Plus]             = @"iPhone 8 Plus",
-    [iPhone_X]                  = @"iPhone X",
+    [Chinese_iPhone_7]          = @"国行/日版/港行 iPhone 7",
+    [Chinese_iPhone_7_Plus]     = @"港行/国行 iPhone 7 Plus",
+    [American_iPhone_7]         = @"美版/台版 iPhone 7",
+    [American_iPhone_7_Plus]    = @"美版/台版 iPhone 7 Plus",
+    [Chinese_iPhone_8]          = @"国行/日版 iPhone 8",
+    [Chinese_iPhone_8_Plus]     = @"国行/日版 iPhone 8 Plus",
+    [Chinese_iPhone_X]          = @"国行/日版 iPhone X",
+    [Global_iPhone_8]           = @"美版(Global) iPhone 8",
+    [Global_iPhone_8_Plus]      = @"美版(Global) iPhone 8 Plus",
+    [Global_iPhone_X]           = @"美版(Global) iPhone X",
     
     [iPod_Touch_1G]             = @"iPod Touch 1G",
     [iPod_Touch_2G]             = @"iPod Touch 2G",
@@ -322,8 +328,10 @@ static const NSUInteger BatteryCapacityContainer[] = {
     [American_iPhone_7]         = 1960,
     [Chinese_iPhone_7_Plus]     = 2900,
     [American_iPhone_7_Plus]    = 2900,
-    [iPhone_8]                  = 1821,
-    [iPhone_8_Plus]             = 2691,
+    [Chinese_iPhone_8]          = 1821,
+    [Global_iPhone_8]           = 1821,
+    [Chinese_iPhone_8_Plus]     = 2691,
+    [Global_iPhone_8_Plus]      = 2691,
     
     [iPod_Touch_1G]             = 789,
     [iPod_Touch_2G]             = 789,
@@ -386,8 +394,10 @@ static const CGFloat BatteryVoltageContainer[] = {
     [Chinese_iPhone_7]          = 3.8,
     [American_iPhone_7_Plus]    = 3.82,
     [Chinese_iPhone_7_Plus]     = 3.82,
-    [iPhone_8]                  = 3.82,
-    [iPhone_8_Plus]             = 3.82,
+    [Chinese_iPhone_8]          = 3.82,
+    [Global_iPhone_8]           = 3.82,
+    [Chinese_iPhone_8_Plus]     = 3.82,
+    [Global_iPhone_8_Plus]      = 3.82,
     
     [iPod_Touch_1G]             = 3.7,
     [iPod_Touch_2G]             = 3.7,
@@ -514,9 +524,12 @@ static const NSString *CPUNameContainer[] = {
     [American_iPhone_7]         = @"Apple A10",
     [American_iPhone_7_Plus]    = @"Apple A10",
     [Chinese_iPhone_7_Plus]     = @"Apple A10",
-    [iPhone_8]                  = @"Apple A11",
-    [iPhone_8_Plus]             = @"Apple A11",
-    [iPhone_X]                  = @"Apple A11",
+    [Chinese_iPhone_8]          = @"Apple A11",
+    [Chinese_iPhone_8_Plus]     = @"Apple A11",
+    [Chinese_iPhone_X]          = @"Apple A11",
+    [Global_iPhone_8]           = @"Apple A11",
+    [Global_iPhone_8_Plus]      = @"Apple A11",
+    [Global_iPhone_X]           = @"Apple A11",
     
     [iPod_Touch_1G]             = @"ARM 1176JZ",
     [iPod_Touch_2G]             = @"ARM 1176JZ",
