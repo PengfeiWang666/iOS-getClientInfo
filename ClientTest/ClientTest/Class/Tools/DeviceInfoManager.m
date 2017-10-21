@@ -127,15 +127,15 @@
 }
 
 - (NSUInteger)getCPUFrequency {
-    return [self getSystemInfo:HW_CPU_FREQ];
+    return [self _getSystemInfo:HW_CPU_FREQ];
 }
 
 - (NSUInteger)getBusFrequency {
-    return [self getSystemInfo:HW_BUS_FREQ];
+    return [self _getSystemInfo:HW_BUS_FREQ];
 }
 
 - (NSUInteger)getRamSize {
-    return [self getSystemInfo:HW_MEMSIZE];
+    return [self _getSystemInfo:HW_MEMSIZE];
 }
 
 - (NSString *)getCPUProcessor {
@@ -206,9 +206,9 @@
 
 #pragma mark - Disk
 - (NSString *)getApplicationSize {
-    unsigned long long documentSize   =  [self getSizeOfFolder:[self getDocumentPath]];
-    unsigned long long librarySize   =  [self getSizeOfFolder:[self getLibraryPath]];
-    unsigned long long cacheSize =  [self getSizeOfFolder:[self getCachePath]];
+    unsigned long long documentSize   =  [self _getSizeOfFolder:[self _getDocumentPath]];
+    unsigned long long librarySize   =  [self _getSizeOfFolder:[self _getLibraryPath]];
+    unsigned long long cacheSize =  [self _getSizeOfFolder:[self _getCachePath]];
     
     unsigned long long total = documentSize + librarySize + cacheSize;
     
@@ -335,7 +335,7 @@
 }
 
 #pragma mark - Private Method
-- (NSUInteger)getSystemInfo:(uint)typeSpecifier {
+- (NSUInteger)_getSystemInfo:(uint)typeSpecifier {
     size_t size = sizeof(int);
     int result;
     int mib[2] = {CTL_HW, typeSpecifier};
@@ -343,26 +343,25 @@
     return (NSUInteger)result;
 }
 
-- (NSString *)getDocumentPath {
+- (NSString *)_getDocumentPath {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *basePath = [paths firstObject];
     return basePath;
 }
 
-- (NSString *)getLibraryPath {
+- (NSString *)_getLibraryPath {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
     NSString *basePath = [paths firstObject];
     return basePath;
 }
 
-- (NSString *)getCachePath {
+- (NSString *)_getCachePath {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
     NSString *basePath = [paths firstObject];
     return basePath;
 }
 
-
--(unsigned long long)getSizeOfFolder:(NSString *)folderPath {
+-(unsigned long long)_getSizeOfFolder:(NSString *)folderPath {
     NSArray *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:folderPath error:nil];
     NSEnumerator *contentsEnumurator = [contents objectEnumerator];
     

@@ -32,11 +32,11 @@
         UIDevice *device = [UIDevice currentDevice];
         
         [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(batteryLevelUpdatedCB:)
+                                                 selector:@selector(_batteryLevelUpdatedCB:)
                                                      name:UIDeviceBatteryLevelDidChangeNotification
                                                    object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(batteryStatusUpdatedCB:)
+                                                 selector:@selector(_batteryStatusUpdatedCB:)
                                                      name:UIDeviceBatteryStateDidChangeNotification
                                                    object:nil];
         
@@ -44,7 +44,7 @@
         
         // If by any chance battery value is available - update it immediately
         if ([device batteryState] != UIDeviceBatteryStateUnknown) {
-            [self doUpdateBatteryStatus];
+            [self _doUpdateBatteryStatus];
         }
     }
 }
@@ -59,15 +59,15 @@
 
 #pragma mark - Private Method
 
-- (void)batteryLevelUpdatedCB:(NSNotification*)notification {
+- (void)_batteryLevelUpdatedCB:(NSNotification*)notification {
     [self doUpdateBatteryStatus];
 }
 
-- (void)batteryStatusUpdatedCB:(NSNotification*)notification {
+- (void)_batteryStatusUpdatedCB:(NSNotification*)notification {
     [self doUpdateBatteryStatus];
 }
 
-- (void)doUpdateBatteryStatus {
+- (void)_doUpdateBatteryStatus {
     float batteryMultiplier = [[UIDevice currentDevice] batteryLevel];
     self.levelPercent = batteryMultiplier * 100;
     self.levelMAH =  self.capacity * batteryMultiplier;

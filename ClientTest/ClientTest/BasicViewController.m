@@ -27,15 +27,15 @@
     self = [super init];
     if (self) {
         if (type == BasicInfoTypeHardWare) {
-            [self setupHardwareInfo];
+            [self _setupHardwareInfo];
         } else if (type == BasicInfoTypeBattery) {
-            [self setupBatteryInfo];
+            [self _setupBatteryInfo];
         } else if (type == BasicInfoTypeIpAddress) {
-            [self setupAddressInfo];
+            [self _setupAddressInfo];
         } else if (type == BasicInfoTypeCPU){
-            [self setupCPUInfo];
+            [self _setupCPUInfo];
         } else if (type == BasicInfoTypeDisk){
-            [self setupDiskInfo];
+            [self _setupDiskInfo];
         }
     }
     return self;
@@ -66,7 +66,7 @@
 
 #pragma mark - private Method
 
-- (void)setupHardwareInfo {
+- (void)_setupHardwareInfo {
     
     self.navigationItem.title = @"Hardware Info";
     
@@ -162,7 +162,7 @@
     
 }
 
-- (void)setupBatteryInfo {
+- (void)_setupBatteryInfo {
     
     BatteryInfoManager *batteryManager = [BatteryInfoManager sharedManager];
     batteryManager.delegate = self;
@@ -214,7 +214,7 @@
     
 }
 
-- (void)setupAddressInfo {
+- (void)_setupAddressInfo {
     
     self.navigationItem.title = @"IP && Address";
     
@@ -284,7 +284,7 @@
     
 }
 
-- (void)setupCPUInfo {
+- (void)_setupCPUInfo {
     self.navigationItem.title = @"CPU Info";
     
     NSString *cpuName = [[DeviceInfoManager sharedManager] getCPUProcessor];
@@ -333,7 +333,7 @@
     [self.infoArray addObject:dict5];
 }
 
-- (void)setupDiskInfo {
+- (void)_setupDiskInfo {
     self.navigationItem.title = @"Disk && Memory";
     
     NSString *applicationSize = [[DeviceInfoManager sharedManager] getApplicationSize];

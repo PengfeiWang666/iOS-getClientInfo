@@ -22,6 +22,7 @@
     // Do any additional setup after loading the view.
 }
 
+#pragma mark - Event Response
 - (IBAction)hardWareInfoButtonTapped:(id)sender {
     BasicViewController *hardwareVC = [[BasicViewController alloc] initWIthType:BasicInfoTypeHardWare];
     [self.navigationController pushViewController:hardwareVC  animated:YES];
