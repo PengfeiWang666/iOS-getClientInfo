@@ -60,11 +60,11 @@
 #pragma mark - Private Method
 
 - (void)_batteryLevelUpdatedCB:(NSNotification*)notification {
-    [self doUpdateBatteryStatus];
+    [self _doUpdateBatteryStatus];
 }
 
 - (void)_batteryStatusUpdatedCB:(NSNotification*)notification {
-    [self doUpdateBatteryStatus];
+    [self _doUpdateBatteryStatus];
 }
 
 - (void)_doUpdateBatteryStatus {
