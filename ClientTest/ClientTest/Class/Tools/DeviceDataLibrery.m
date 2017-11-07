@@ -165,7 +165,7 @@ typedef NS_ENUM(NSUInteger, DiviceType) {
     if ([machineString isEqualToString:@"iPhone9,4"])   return American_iPhone_7_Plus;
     if ([machineString isEqualToString:@"iPhone10,1"])  return Chinese_iPhone_8;
     if ([machineString isEqualToString:@"iPhone10,4"])  return Global_iPhone_8;
-    if ([machineString isEqualToString:@"iPhone10,2"])  return Global_iPhone_8;
+    if ([machineString isEqualToString:@"iPhone10,2"])  return Chinese_iPhone_8_Plus;
     if ([machineString isEqualToString:@"iPhone10,5"])  return Global_iPhone_8_Plus;
     if ([machineString isEqualToString:@"iPhone10,3"])  return Chinese_iPhone_X;
     if ([machineString isEqualToString:@"iPhone10,6"])  return Global_iPhone_X;
@@ -200,7 +200,7 @@ typedef NS_ENUM(NSUInteger, DiviceType) {
     if ([machineString isEqualToString:@"iPad4,8"])     return iPad_Mini_3_Cellular;
     if ([machineString isEqualToString:@"iPad4,9"])     return iPad_Mini_3_Cellular;
     if ([machineString isEqualToString:@"iPad5,1"])     return iPad_Mini_4_WiFi;
-    if ([machineString isEqualToString:@"iPad5,2"])     return iPad_Mini_3_Cellular;
+    if ([machineString isEqualToString:@"iPad5,2"])     return iPad_Mini_4_Cellular;
     if ([machineString isEqualToString:@"iPad5,3"])     return iPad_Air_2_WiFi;
     if ([machineString isEqualToString:@"iPad5,4"])     return iPad_Air_2_Cellular;
     if ([machineString isEqualToString:@"iPad6,3"])     return iPad_Pro_97inch_WiFi;

@@ -226,12 +226,25 @@
 }
 
 - (int64_t)getFreeDiskSpace {
-    NSError *error = nil;
-    NSDictionary *attrs = [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory() error:&error];
-    if (error) return -1;
-    int64_t space =  [[attrs objectForKey:NSFileSystemFreeSize] longLongValue];
-    if (space < 0) space = -1;
-    return space;
+    
+//    if (@available(iOS 11.0, *)) {
+//        NSError *error = nil;
+//        NSURL *testURL = [NSURL URLWithString:NSHomeDirectory()];
+//
+//        NSDictionary *dict = [testURL resourceValuesForKeys:@[NSURLVolumeAvailableCapacityForImportantUsageKey] error:&error];
+//
+//        return (int64_t)dict[NSURLVolumeAvailableCapacityForImportantUsageKey];
+//
+//
+//    } else {
+        NSError *error = nil;
+        NSDictionary *attrs = [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory() error:&error];
+        if (error) return -1;
+        int64_t space =  [[attrs objectForKey:NSFileSystemFreeSize] longLongValue];
+        if (space < 0) space = -1;
+        return space;
+//    }
+    
 }
 
 - (int64_t)getUsedDiskSpace {
