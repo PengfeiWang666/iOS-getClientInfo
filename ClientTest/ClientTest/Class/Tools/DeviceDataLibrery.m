@@ -464,6 +464,12 @@ static const NSUInteger CPUFrequencyContainer[] = {
     [American_iPhone_7]         = 2340,
     [American_iPhone_7_Plus]    = 2240,
     [Chinese_iPhone_7_Plus]     = 2240,
+    [Chinese_iPhone_8]          = 2390,
+    [Chinese_iPhone_8_Plus]     = 2390,
+    [Chinese_iPhone_X]          = 2390,
+    [Global_iPhone_8]           = 2390,
+    [Global_iPhone_8_Plus]      = 2390,
+    [Global_iPhone_X]           = 2390,
     
     [iPod_Touch_1G]             = 400,
     [iPod_Touch_2G]             = 533,
