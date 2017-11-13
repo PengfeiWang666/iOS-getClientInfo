@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0F5D09F01D264F5900F3FDD3 /* NSData+CRC32.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F5D09EF1D264F5900F3FDD3 /* NSData+CRC32.m */; };
-		0F5D09FD1D26572900F3FDD3 /* WPFInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F5D09FC1D26572900F3FDD3 /* WPFInfo.m */; };
 		0F8AEC401D262754007827BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8AEC3F1D262754007827BA /* main.m */; };
 		0F8AEC431D262754007827BA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8AEC421D262754007827BA /* AppDelegate.m */; };
 		0F8AEC461D262754007827BA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8AEC451D262754007827BA /* ViewController.m */; };
@@ -44,8 +43,6 @@
 /* Begin PBXFileReference section */
 		0F5D09EE1D264F5900F3FDD3 /* NSData+CRC32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CRC32.h"; sourceTree = "<group>"; };
 		0F5D09EF1D264F5900F3FDD3 /* NSData+CRC32.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CRC32.m"; sourceTree = "<group>"; };
-		0F5D09FB1D26572900F3FDD3 /* WPFInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPFInfo.h; sourceTree = "<group>"; };
-		0F5D09FC1D26572900F3FDD3 /* WPFInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPFInfo.m; sourceTree = "<group>"; };
 		0F8AEC3B1D262754007827BA /* ClientTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClientTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F8AEC3F1D262754007827BA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0F8AEC411D262754007827BA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -102,8 +99,6 @@
 		0F5D09F71D26566A00F3FDD3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0F5D09FB1D26572900F3FDD3 /* WPFInfo.h */,
-				0F5D09FC1D26572900F3FDD3 /* WPFInfo.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -376,7 +371,6 @@
 				0F8AEC461D262754007827BA /* ViewController.m in Sources */,
 				0F8AEC431D262754007827BA /* AppDelegate.m in Sources */,
 				357CB08B1F4D6E96006BFB52 /* BatteryInfoManager.m in Sources */,
-				0F5D09FD1D26572900F3FDD3 /* WPFInfo.m in Sources */,
 				3524EF9A1F4E7D51001CF837 /* DeviceDataLibrery.m in Sources */,
 				356F36D21ECDB899001603AB /* BasicViewController.m in Sources */,
 				0F8AEC401D262754007827BA /* main.m in Sources */,
