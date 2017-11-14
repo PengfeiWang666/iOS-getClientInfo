@@ -80,7 +80,7 @@
     self.navigationItem.title = @"Hardware Info";
     
     const NSString *deviceName = [[DeviceInfoManager sharedManager] getDeviceName];
-    [self _addInfoWithKey:@"设备型号" infoValue:deviceName];
+    [self _addInfoWithKey:@"设备型号" infoValue:[deviceName copy]];
     
     NSString *iPhoneName = [UIDevice currentDevice].name;
     [self _addInfoWithKey:@"设备名称" infoValue:iPhoneName];
@@ -243,6 +243,7 @@
     BasicInfo *info = [[BasicInfo alloc] init];
     info.infoKey = infoKey;
     info.infoValue = infoValue;
+    NSLog(@"%@---%@", infoKey, infoValue);
     [self.infoArray addObject:info];
 }
 
@@ -275,7 +276,6 @@
     cell.textLabel.text = infoModel.infoKey;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"------>%@", infoModel.infoValue];
     cell.detailTextLabel.numberOfLines = 0;
-    
     return cell;
 }
 
