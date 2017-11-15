@@ -18,6 +18,6 @@ typedef NS_ENUM(NSUInteger, BasicInfoType) {
 
 @interface BasicViewController : UIViewController
 
-- (instancetype)initWIthType:(BasicInfoType)type;
+- (instancetype)initWithType:(BasicInfoType)type;
 
 @end

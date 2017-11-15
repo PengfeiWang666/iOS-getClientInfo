@@ -11,8 +11,6 @@
 
 @interface ViewController () 
 
-
-
 @end
 
 @implementation ViewController
@@ -24,28 +22,29 @@
 
 #pragma mark - Event Response
 - (IBAction)hardWareInfoButtonTapped:(id)sender {
-    BasicViewController *hardwareVC = [[BasicViewController alloc] initWIthType:BasicInfoTypeHardWare];
-    [self.navigationController pushViewController:hardwareVC  animated:YES];
+    [self _pushVCWithType:BasicInfoTypeHardWare sender:sender];
 }
 
 - (IBAction)batteryInfoButtonTapped:(id)sender {
-    BasicViewController *batteryVC = [[BasicViewController alloc] initWIthType:BasicInfoTypeBattery];
-    [self.navigationController pushViewController:batteryVC  animated:YES];
+    [self _pushVCWithType:BasicInfoTypeBattery sender:sender];
 }
 
 - (IBAction)addressInfoButtonTapped:(id)sender {
-    BasicViewController *addressVC = [[BasicViewController alloc] initWIthType:BasicInfoTypeIpAddress];
-    [self.navigationController pushViewController:addressVC  animated:YES];
+    [self _pushVCWithType:BasicInfoTypeIpAddress sender:sender];
 }
 
 - (IBAction)CPUInfoButtonTapped:(id)sender {
-    BasicViewController *dickVC = [[BasicViewController alloc] initWIthType:BasicInfoTypeCPU];
-    [self.navigationController pushViewController:dickVC  animated:YES];
+    [self _pushVCWithType:BasicInfoTypeCPU sender:sender];
 }
 
 - (IBAction)diskInfoButtonTapped:(id)sender {
-    BasicViewController *dickVC = [[BasicViewController alloc] initWIthType:BasicInfoTypeDisk];
-    [self.navigationController pushViewController:dickVC  animated:YES];
+    [self _pushVCWithType:BasicInfoTypeDisk sender:sender];
+}
+
+- (void)_pushVCWithType:(BasicInfoType)type sender:(UIButton *)sender {
+    BasicViewController *basicVC = [[BasicViewController alloc] initWithType:type];
+    basicVC.navigationItem.title = sender.titleLabel.text;
+    [self.navigationController pushViewController:basicVC  animated:YES];
 }
 
 @end
