@@ -18,6 +18,10 @@
 
 /** 获取设备型号 */
 - (const NSString *)getDeviceName;
+/** 获取设备颜色 */
+- (NSString *)getDeviceColor;
+/** 获取设备外壳颜色 */
+- (NSString *)getDeviceEnclosureColor;
 /** 获取mac地址 */
 - (NSString *)getMacAddress;
 /** 获取广告标识符 */
