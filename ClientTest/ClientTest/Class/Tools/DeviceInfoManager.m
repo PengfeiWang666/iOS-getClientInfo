@@ -98,10 +98,12 @@
     return [[DeviceDataLibrery sharedLibrery] getDiviceName];
 }
 
+// 私有API，上线会被拒
 - (NSString *)getDeviceColor {
     return [self _getDeviceColorWithKey:@"DeviceColor"];
 }
 
+// 私有API，上线会被拒
 - (NSString *)getDeviceEnclosureColor {
     return [self _getDeviceColorWithKey:@"DeviceEnclosureColor"];
 }
@@ -363,8 +365,10 @@
         selector = NSSelectorFromString(@"_deviceInfoForKey:");
     }
     if ([device respondsToSelector:selector]) {
-        return [device performSelector:selector withObject:key];
+        IMP imp = [device methodForSelector:selector];
+        NSString * (*func)(id, SEL, NSString *) = (void *)imp;
         
+        return func(device, selector, key);
     }
     return @"unKnown";
 }

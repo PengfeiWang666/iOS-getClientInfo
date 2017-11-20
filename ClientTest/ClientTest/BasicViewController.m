@@ -83,10 +83,10 @@
     [self _addInfoWithKey:@"设备名称" infoValue:iPhoneName];
     
     NSString *deviceColor = [[DeviceInfoManager sharedManager] getDeviceColor];
-    [self _addInfoWithKey:@"设备颜色" infoValue:deviceColor];
+    [self _addInfoWithKey:@"设备颜色(Private API)" infoValue:deviceColor];
     
     NSString *deviceEnclosureColor = [[DeviceInfoManager sharedManager] getDeviceEnclosureColor];
-    [self _addInfoWithKey:@"设备外壳颜色" infoValue:deviceEnclosureColor];
+    [self _addInfoWithKey:@"设备外壳颜色(Private API)" infoValue:deviceEnclosureColor];
     
     NSString *appVerion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
     [self _addInfoWithKey:@"app版本号" infoValue:appVerion];
