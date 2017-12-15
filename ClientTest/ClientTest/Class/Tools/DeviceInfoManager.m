@@ -365,6 +365,7 @@
         selector = NSSelectorFromString(@"_deviceInfoForKey:");
     }
     if ([device respondsToSelector:selector]) {
+        // 消除警告“performSelector may cause a leak because its selector is unknown”
         IMP imp = [device methodForSelector:selector];
         NSString * (*func)(id, SEL, NSString *) = (void *)imp;
         
