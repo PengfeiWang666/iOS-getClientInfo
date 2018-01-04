@@ -301,7 +301,7 @@
 				TargetAttributes = {
 					0F8AEC3A1D262754007827BA = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = ST685X75RG;
+						DevelopmentTeam = VTN6895HU8;
 					};
 					0F8AEC531D262755007827BA = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -534,7 +534,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = ST685X75RG;
+				DEVELOPMENT_TEAM = VTN6895HU8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ClientTest/Class/3rd",
@@ -542,7 +542,7 @@
 				INFOPLIST_FILE = ClientTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wpf.apple.ClientTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wpf.apple.ClientTest9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -554,7 +554,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = ST685X75RG;
+				DEVELOPMENT_TEAM = VTN6895HU8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ClientTest/Class/3rd",
@@ -562,7 +562,7 @@
 				INFOPLIST_FILE = ClientTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wpf.apple.ClientTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wpf.apple.ClientTest9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

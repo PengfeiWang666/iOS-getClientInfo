@@ -120,6 +120,10 @@ typedef NS_ENUM(NSUInteger, DiviceType) {
     return iDeviceNameContainer[self.iDevice];
 }
 
+- (const NSString *)getInitialVersion {
+    return initialFirmwareContainer[self.iDevice];
+}
+
 - (NSInteger)getBatteryCapacity {
     return BatteryCapacityContainer[self.iDevice];
 }
@@ -553,9 +557,9 @@ static const NSString *CPUNameContainer[] = {
     [iPad_3_WiFi]               = @"ARM Cortex-A9",
     [iPad_3_GSM]                = @"ARM Cortex-A9",
     [iPad_3_CDMA]               = @"ARM Cortex-A9",
-    [iPad_4_WiFi]               = @"Apple Swift",
-    [iPad_4_GSM]                = @"Apple Swift",
-    [iPad_4_CDMA]               = @"Apple Swift",
+    [iPad_4_WiFi]               = @"Apple A6X",
+    [iPad_4_GSM]                = @"Apple A6X",
+    [iPad_4_CDMA]               = @"Apple A6X",
     [iPad_Air]                  = @"Apple A7",
     [iPad_Air_Cellular]         = @"Apple A7",
     [iPad_Air_2_WiFi]           = @"Apple A8X",
@@ -576,6 +580,74 @@ static const NSString *CPUNameContainer[] = {
     [iPad_Pro_129inch_2nd_gen_Cellular] = @"Apple A10X",
     [iPad_Pro_105inch_WiFi]             = @"Apple A10X",
     [iPad_Pro_105inch_Cellular]         = @"Apple A10X",
+    
+    [iUnknown]                          = @"Unknown"
+};
+
+static const NSString *initialFirmwareContainer[] = {
+    [iPhone_1G]                 = @"1.0",
+    [iPhone_3G]                 = @"2.0",
+    [iPhone_3GS]                = @"3.0",
+    [iPhone_4]                  = @"4.0/4.2.5/4.2.6",
+    [iPhone_4_Verizon]          = @"4.0/4.2.5/4.2.6",
+    [iPhone_4S]                 = @"5.0",
+    [iPhone_5_GSM]              = @"6.0",
+    [iPhone_5_CDMA]             = @"6.0",
+    [iPhone_5C_GSM]             = @"7.0",
+    [iPhone_5C_GSM_CDMA]        = @"7.0",
+    [iPhone_5S_GSM]             = @"7.0",
+    [iPhone_5S_GSM_CDMA]        = @"7.0",
+    [iPhone_6]                  = @"8.0",
+    [iPhone_6_Plus]             = @"8.0",
+    [iPhone_6S]                 = @"9.0",
+    [iPhone_6S_Plus]            = @"9.0",
+    [iPhone_SE]                 = @"9.3",
+    [Chinese_iPhone_7]          = @"10.0",
+    [American_iPhone_7]         = @"10.0",
+    [American_iPhone_7_Plus]    = @"10.0",
+    [Chinese_iPhone_7_Plus]     = @"10.0",
+    [Chinese_iPhone_8]          = @"11.0",
+    [Chinese_iPhone_8_Plus]     = @"11.0",
+    [Chinese_iPhone_X]          = @"11.0.1",
+    [Global_iPhone_8]           = @"11.0",
+    [Global_iPhone_8_Plus]      = @"11.0",
+    [Global_iPhone_X]           = @"11.0.1",
+    
+    [iPod_Touch_1G]             = @"1.1",
+    [iPod_Touch_2G]             = @"2.1.1(MB)/3.1.1(MC)",
+    [iPod_Touch_3G]             = @"3.1.1",
+    [iPod_Touch_4G]             = @"4.1",
+    [iPod_Touch_5Gen]           = @"6.0/6.1.3",
+    [iPad_1]                    = @"3.2",
+    [iPad_2_CDMA]               = @"4.3/5.1",
+    [iPad_2_GSM]                = @"4.3/5.1",
+    [iPad_2_WiFi]               = @"4.3/5.1",
+    [iPad_3_WiFi]               = @"5.1",
+    [iPad_3_GSM]                = @"5.1",
+    [iPad_3_CDMA]               = @"5.1",
+    [iPad_4_WiFi]               = @"6.0/6.0.1",
+    [iPad_4_GSM]                = @"6.0/6.0.1",
+    [iPad_4_CDMA]               = @"6.0/6.0.1",
+    [iPad_Air]                  = @"7.0.3/7.1",
+    [iPad_Air_Cellular]         = @"7.0.3/7.1",
+    [iPad_Air_2_WiFi]           = @"8.1",
+    [iPad_Air_2_Cellular]       = @"8.1",
+    [iPad_Mini_WiFi]            = @"6.0/6.0.1",
+    [iPad_Mini_GSM]             = @"6.0/6.0.1",
+    [iPad_Mini_CDMA]            = @"6.0/6.0.1",
+    [iPad_Mini_2]               = @"7.0.3/7.1",
+    [iPad_Mini_2_Cellular]      = @"7.0.3/7.1",
+    [iPad_Mini_3_WiFi]          = @"8.0/8.1",
+    [iPad_Mini_3_Cellular]      = @"8.0/8.1",
+    
+    [iPad_Pro_97inch_WiFi]      = @"9.3",
+    [iPad_Pro_97inch_Cellular]  = @"9.3",
+    [iPad_Pro_129inch_WiFi]     = @"9.1",
+    [iPad_Pro_129inch_Cellular] = @"9.1",
+    [iPad_Pro_129inch_2nd_gen_WiFi]     = @"10.3.2",
+    [iPad_Pro_129inch_2nd_gen_Cellular] = @"10.3.2",
+    [iPad_Pro_105inch_WiFi]             = @"10.3.2",
+    [iPad_Pro_105inch_Cellular]         = @"10.3.2",
     
     [iUnknown]                          = @"Unknown"
 };

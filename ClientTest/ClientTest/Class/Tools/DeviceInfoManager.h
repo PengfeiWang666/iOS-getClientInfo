@@ -18,6 +18,8 @@
 
 /** 获取设备型号 */
 - (const NSString *)getDeviceName;
+/** 获取设备装机时的系统版本（最低支持版本） */
+- (const NSString *)getInitialFirmware;
 /** 获取设备颜色 */
 - (NSString *)getDeviceColor;
 /** 获取设备外壳颜色 */

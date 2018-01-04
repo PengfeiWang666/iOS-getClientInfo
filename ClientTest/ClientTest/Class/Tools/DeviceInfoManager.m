@@ -98,6 +98,10 @@
     return [[DeviceDataLibrery sharedLibrery] getDiviceName];
 }
 
+- (const NSString *)getInitialFirmware {
+    return [[DeviceDataLibrery sharedLibrery] getInitialVersion];
+}
+
 // 私有API，上线会被拒
 - (NSString *)getDeviceColor {
     return [self _getDeviceColorWithKey:@"DeviceColor"];
