@@ -124,6 +124,10 @@ typedef NS_ENUM(NSUInteger, DiviceType) {
     return initialFirmwareContainer[self.iDevice];
 }
 
+- (const NSString *)getLatestVersion {
+    return latestFirmwareContainer[self.iDevice];
+}
+
 - (NSInteger)getBatteryCapacity {
     return BatteryCapacityContainer[self.iDevice];
 }
@@ -648,6 +652,74 @@ static const NSString *initialFirmwareContainer[] = {
     [iPad_Pro_129inch_2nd_gen_Cellular] = @"10.3.2",
     [iPad_Pro_105inch_WiFi]             = @"10.3.2",
     [iPad_Pro_105inch_Cellular]         = @"10.3.2",
+    
+    [iUnknown]                          = @"Unknown"
+};
+
+static const NSString *latestFirmwareContainer[] = {
+    [iPhone_1G]                 = @"3.1.3",
+    [iPhone_3G]                 = @"4.2.1",
+    [iPhone_3GS]                = @"6.1.6",
+    [iPhone_4]                  = @"7.1.2",
+    [iPhone_4_Verizon]          = @"7.1.2",
+    [iPhone_4S]                 = @"9.3.5",
+    [iPhone_5_GSM]              = @"10.3.3",
+    [iPhone_5_CDMA]             = @"10.3.3",
+    [iPhone_5C_GSM]             = @"10.3.3",
+    [iPhone_5C_GSM_CDMA]        = @"10.3.3",
+    [iPhone_5S_GSM]             = @"11.2.5 beta3(尚未到顶)",
+    [iPhone_5S_GSM_CDMA]        = @"11.2.5 beta3(尚未到顶)",
+    [iPhone_6]                  = @"11.2.5 beta3(尚未到顶)",
+    [iPhone_6_Plus]             = @"11.2.5 beta3(尚未到顶)",
+    [iPhone_6S]                 = @"11.2.5 beta3(尚未到顶)",
+    [iPhone_6S_Plus]            = @"11.2.5 beta3(尚未到顶)",
+    [iPhone_SE]                 = @"11.2.5 beta3(尚未到顶)",
+    [Chinese_iPhone_7]          = @"11.2.5 beta3(尚未到顶)",
+    [American_iPhone_7]         = @"11.2.5 beta3(尚未到顶)",
+    [American_iPhone_7_Plus]    = @"11.2.5 beta3(尚未到顶)",
+    [Chinese_iPhone_7_Plus]     = @"11.2.5 beta3(尚未到顶)",
+    [Chinese_iPhone_8]          = @"11.2.5 beta3(尚未到顶)",
+    [Chinese_iPhone_8_Plus]     = @"11.2.5 beta3(尚未到顶)",
+    [Chinese_iPhone_X]          = @"11.2.5 beta3(尚未到顶)",
+    [Global_iPhone_8]           = @"11.2.5 beta3(尚未到顶)",
+    [Global_iPhone_8_Plus]      = @"11.2.5 beta3(尚未到顶)",
+    [Global_iPhone_X]           = @"11.2.5 beta3(尚未到顶)",
+    
+    [iPod_Touch_1G]             = @"3.1.3",
+    [iPod_Touch_2G]             = @"4.2.1",
+    [iPod_Touch_3G]             = @"5.1.1",
+    [iPod_Touch_4G]             = @"6.1.6",
+    [iPod_Touch_5Gen]           = @"9.3.5",
+    [iPad_1]                    = @"5.1.1",
+    [iPad_2_CDMA]               = @"9.3.5",
+    [iPad_2_GSM]                = @"9.3.5",
+    [iPad_2_WiFi]               = @"9.3.5",
+    [iPad_3_WiFi]               = @"9.3.5",
+    [iPad_3_GSM]                = @"9.3.5",
+    [iPad_3_CDMA]               = @"9.3.5",
+    [iPad_4_WiFi]               = @"10.3.3",
+    [iPad_4_GSM]                = @"10.3.3",
+    [iPad_4_CDMA]               = @"10.3.3",
+    [iPad_Air]                  = @"11.2.5 beta3(尚未到顶)",
+    [iPad_Air_Cellular]         = @"11.2.5 beta3(尚未到顶)",
+    [iPad_Air_2_WiFi]           = @"11.2.5 beta3(尚未到顶)",
+    [iPad_Air_2_Cellular]       = @"11.2.5 beta3(尚未到顶)",
+    [iPad_Mini_WiFi]            = @"9.3.5",
+    [iPad_Mini_GSM]             = @"9.3.5",
+    [iPad_Mini_CDMA]            = @"9.3.5",
+    [iPad_Mini_2]               = @"11.2.5 beta3(尚未到顶)",
+    [iPad_Mini_2_Cellular]      = @"11.2.5 beta3(尚未到顶)",
+    [iPad_Mini_3_WiFi]          = @"11.2.5 beta3(尚未到顶)",
+    [iPad_Mini_3_Cellular]      = @"11.2.5 beta3(尚未到顶)",
+    
+    [iPad_Pro_97inch_WiFi]      = @"11.2.5 beta3(尚未到顶)",
+    [iPad_Pro_97inch_Cellular]  = @"11.2.5 beta3(尚未到顶)",
+    [iPad_Pro_129inch_WiFi]     = @"11.2.5 beta3(尚未到顶)",
+    [iPad_Pro_129inch_Cellular] = @"11.2.5 beta3(尚未到顶)",
+    [iPad_Pro_129inch_2nd_gen_WiFi]     = @"11.2.5 beta3(尚未到顶)",
+    [iPad_Pro_129inch_2nd_gen_Cellular] = @"11.2.5 beta3(尚未到顶)",
+    [iPad_Pro_105inch_WiFi]             = @"11.2.5 beta3(尚未到顶)",
+    [iPad_Pro_105inch_Cellular]         = @"11.2.5 beta3(尚未到顶)",
     
     [iUnknown]                          = @"Unknown"
 };

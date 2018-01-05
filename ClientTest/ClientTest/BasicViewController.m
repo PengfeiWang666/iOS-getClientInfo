@@ -106,6 +106,9 @@
     const NSString *initialFirmware = [[DeviceInfoManager sharedManager] getInitialFirmware];
     [self _addInfoWithKey:@"设备支持最低系统版本" infoValue:[initialFirmware copy]];
     
+    const NSString *latestFirmware = [[DeviceInfoManager sharedManager] getLatestFirmware];
+    [self _addInfoWithKey:@"设备支持的最高系统版本" infoValue:[latestFirmware copy]];
+    
     BOOL canMakePhoneCall = [DeviceInfoManager sharedManager].canMakePhoneCall;
     [self _addInfoWithKey:@"能否打电话" infoValue:@(canMakePhoneCall)];
     
