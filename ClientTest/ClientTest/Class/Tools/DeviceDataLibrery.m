@@ -209,6 +209,7 @@ typedef NS_ENUM(NSUInteger, DiviceType) {
     if ([machineString isEqualToString:@"iPad4,9"])     return iPad_Mini_3_Cellular;
     if ([machineString isEqualToString:@"iPad5,1"])     return iPad_Mini_4_WiFi;
     if ([machineString isEqualToString:@"iPad5,2"])     return iPad_Mini_4_Cellular;
+    
     if ([machineString isEqualToString:@"iPad5,3"])     return iPad_Air_2_WiFi;
     if ([machineString isEqualToString:@"iPad5,4"])     return iPad_Air_2_Cellular;
     if ([machineString isEqualToString:@"iPad6,3"])     return iPad_Pro_97inch_WiFi;
@@ -285,15 +286,18 @@ static const NSString *iDeviceNameContainer[] = {
     [iPad_4_GSM_CDMA]           = @"iPad 4 (GSM+CDMA)",
     [iPad_Air]                  = @"iPad Air",
     [iPad_Air_Cellular]         = @"iPad Air (Cellular)",
-    [iPad_Air_2_WiFi]           = @"iPad Air 2(WiFi)",
+    [iPad_Air_2_WiFi]           = @"iPad Air 2 (WiFi)",
     [iPad_Air_2_Cellular]       = @"iPad Air 2 (Cellular)",
     [iPad_Mini_WiFi]            = @"iPad Mini (WiFi)",
     [iPad_Mini_GSM]             = @"iPad Mini (GSM)",
     [iPad_Mini_CDMA]            = @"iPad Mini (CDMA)",
     [iPad_Mini_2]               = @"iPad Mini 2",
     [iPad_Mini_2_Cellular]      = @"iPad Mini 2 (Cellular)",
-    [iPad_Mini_3_WiFi]          = @"iPad Mini 3(WiFi)",
+    [iPad_Mini_3_WiFi]          = @"iPad Mini 3 (WiFi)",
     [iPad_Mini_3_Cellular]      = @"iPad Mini 3 (Cellular)",
+    [iPad_Mini_4_WiFi]          = @"iPad Mini 4 (WiFi)",
+    [iPad_Mini_4_Cellular]      = @"iPad Mini 4 (Cellular)",
+    
     [iPad_Pro_97inch_WiFi]      = @"iPad Pro 9.7 inch(WiFi)",
     [iPad_Pro_97inch_Cellular]  = @"iPad Pro 9.7 inch(Cellular)",
     [iPad_Pro_129inch_WiFi]     = @"iPad Pro 12.9 inch(WiFi)",
@@ -369,6 +373,9 @@ static const NSUInteger BatteryCapacityContainer[] = {
     [iPad_Mini_2_Cellular]      = 6471,
     [iPad_Mini_3_WiFi]          = 6471,
     [iPad_Mini_3_Cellular]      = 6471,
+    [iPad_Mini_4_WiFi]          = 5124,
+    [iPad_Mini_4_Cellular]      = 5124,
+    
     [iPad_Pro_97inch_WiFi]      = 7306,
     [iPad_Pro_97inch_Cellular]  = 7306,
     [iPad_Pro_129inch_WiFi]     = 10307,
@@ -437,6 +444,8 @@ static const CGFloat BatteryVoltageContainer[] = {
     [iPad_Mini_2_Cellular]      = 3.75,
     [iPad_Mini_3_WiFi]          = 3.75,
     [iPad_Mini_3_Cellular]      = 3.75,
+    [iPad_Mini_4_WiFi]          = 3.82,
+    [iPad_Mini_4_Cellular]      = 3.82,
     [iPad_Pro_97inch_WiFi]      = 3.82,
     [iPad_Pro_97inch_Cellular]  = 3.82,
     [iPad_Pro_129inch_WiFi]     = 3.77,
@@ -506,6 +515,8 @@ static const NSUInteger CPUFrequencyContainer[] = {
     [iPad_Mini_2_Cellular]      = 1300,
     [iPad_Mini_3_WiFi]          = 1300,
     [iPad_Mini_3_Cellular]      = 1300,
+    [iPad_Mini_4_WiFi]          = 1490,
+    [iPad_Mini_4_Cellular]      = 1490,
     [iPad_Pro_97inch_WiFi]      = 2160,
     [iPad_Pro_97inch_Cellular]  = 2160,
     [iPad_Pro_129inch_WiFi]     = 2240,
@@ -575,6 +586,8 @@ static const NSString *CPUNameContainer[] = {
     [iPad_Mini_2_Cellular]      = @"Apple A7",
     [iPad_Mini_3_WiFi]          = @"Apple A7",
     [iPad_Mini_3_Cellular]      = @"Apple A7",
+    [iPad_Mini_4_WiFi]          = @"Apple A8",
+    [iPad_Mini_4_Cellular]      = @"Apple A8",
     
     [iPad_Pro_97inch_WiFi]      = @"Apple A9X",
     [iPad_Pro_97inch_Cellular]  = @"Apple A9X",
@@ -643,6 +656,8 @@ static const NSString *initialFirmwareContainer[] = {
     [iPad_Mini_2_Cellular]      = @"7.0.3/7.1",
     [iPad_Mini_3_WiFi]          = @"8.0/8.1",
     [iPad_Mini_3_Cellular]      = @"8.0/8.1",
+    [iPad_Mini_4_WiFi]          = @"9.0",
+    [iPad_Mini_4_Cellular]      = @"9.0",
     
     [iPad_Pro_97inch_WiFi]      = @"9.3",
     [iPad_Pro_97inch_Cellular]  = @"9.3",
@@ -711,6 +726,8 @@ static const NSString *latestFirmwareContainer[] = {
     [iPad_Mini_2_Cellular]      = @"11.2.5 beta3(尚未到顶)",
     [iPad_Mini_3_WiFi]          = @"11.2.5 beta3(尚未到顶)",
     [iPad_Mini_3_Cellular]      = @"11.2.5 beta3(尚未到顶)",
+    [iPad_Mini_4_WiFi]          = @"11.2.5 beta3(尚未到顶)",
+    [iPad_Mini_4_Cellular]      = @"11.2.5 beta3(尚未到顶)",
     
     [iPad_Pro_97inch_WiFi]      = @"11.2.5 beta3(尚未到顶)",
     [iPad_Pro_97inch_Cellular]  = @"11.2.5 beta3(尚未到顶)",
