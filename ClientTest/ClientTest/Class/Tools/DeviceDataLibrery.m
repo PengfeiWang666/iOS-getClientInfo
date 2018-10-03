@@ -39,6 +39,9 @@ typedef NS_ENUM(NSUInteger, DiviceType) {
     Global_iPhone_8,
     Global_iPhone_8_Plus,
     Global_iPhone_X,
+    iPhone_XS,
+    iPhone_XS_Max,
+    iPhone_XR,
     
     iPod_Touch_1G,
     iPod_Touch_2G,
@@ -177,6 +180,9 @@ typedef NS_ENUM(NSUInteger, DiviceType) {
     if ([machineString isEqualToString:@"iPhone10,5"])  return Global_iPhone_8_Plus;
     if ([machineString isEqualToString:@"iPhone10,3"])  return Chinese_iPhone_X;
     if ([machineString isEqualToString:@"iPhone10,6"])  return Global_iPhone_X;
+    if ([machineString isEqualToString:@"iPhone11,2"])  return iPhone_XS;
+    if ([machineString isEqualToString:@"iPhone11,4"] || [machineString isEqualToString:@"iPhone11,6"])  return iPhone_XS_Max;
+    if ([machineString isEqualToString:@"iPhone11,8"])  return iPhone_XR;
     
     if ([machineString isEqualToString:@"iPod1,1"])     return iPod_Touch_1G;
     if ([machineString isEqualToString:@"iPod2,1"])     return iPod_Touch_2G;
@@ -264,6 +270,9 @@ static const NSString *iDeviceNameContainer[] = {
     [Global_iPhone_8]           = @"美版(Global) iPhone 8",
     [Global_iPhone_8_Plus]      = @"美版(Global) iPhone 8 Plus",
     [Global_iPhone_X]           = @"美版(Global) iPhone X",
+    [iPhone_XS]                 = @"iPhone XS",
+    [iPhone_XS_Max]             = @"iPhone XS Max",
+    [iPhone_XR]                 = @"iPhone XR",
     
     [iPod_Touch_1G]             = @"iPod Touch 1G",
     [iPod_Touch_2G]             = @"iPod Touch 2G",
@@ -346,6 +355,9 @@ static const NSUInteger BatteryCapacityContainer[] = {
     [Global_iPhone_8_Plus]      = 2691,
     [Chinese_iPhone_X]          = 2716,
     [Global_iPhone_X]           = 2716,
+    [iPhone_XS]                 = 2658,
+    [iPhone_XS_Max]             = 3174,
+    [iPhone_XR]                 = 2942,
     
     [iPod_Touch_1G]             = 789,
     [iPod_Touch_2G]             = 789,
@@ -418,6 +430,8 @@ static const CGFloat BatteryVoltageContainer[] = {
     [Global_iPhone_8_Plus]      = 3.82,
     [Chinese_iPhone_X]          = 3.81,
     [Global_iPhone_X]           = 3.81,
+    [iPhone_XS]                 = 3.81,
+    [iPhone_XS_Max]             = 3.80,
     
     [iPod_Touch_1G]             = 3.7,
     [iPod_Touch_2G]             = 3.7,
@@ -489,6 +503,7 @@ static const NSUInteger CPUFrequencyContainer[] = {
     [Global_iPhone_8]           = 2390,
     [Global_iPhone_8_Plus]      = 2390,
     [Global_iPhone_X]           = 2390,
+    
     
     [iPod_Touch_1G]             = 400,
     [iPod_Touch_2G]             = 533,
@@ -562,6 +577,9 @@ static const NSString *CPUNameContainer[] = {
     [Global_iPhone_8]           = @"Apple A11",
     [Global_iPhone_8_Plus]      = @"Apple A11",
     [Global_iPhone_X]           = @"Apple A11",
+    [iPhone_XS]                 = @"A12 Bionic",
+    [iPhone_XS_Max]             = @"A12 Bionic",
+    [iPhone_XR]                 = @"A12 Bionic",
     
     [iPod_Touch_1G]             = @"ARM 1176JZ",
     [iPod_Touch_2G]             = @"ARM 1176JZ",
@@ -633,6 +651,10 @@ static const NSString *initialFirmwareContainer[] = {
     [Global_iPhone_8]           = @"11.0",
     [Global_iPhone_8_Plus]      = @"11.0",
     [Global_iPhone_X]           = @"11.0.1",
+    [iPhone_XS]                 = @"12.0",
+    [iPhone_XS_Max]             = @"12.0",
+    [iPhone_XR]                 = @"12.0",
+    
     
     [iPod_Touch_1G]             = @"1.1",
     [iPod_Touch_2G]             = @"2.1.1(MB)/3.1.1(MC)",
