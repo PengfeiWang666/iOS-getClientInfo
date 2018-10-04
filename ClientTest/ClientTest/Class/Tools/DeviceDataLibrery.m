@@ -88,6 +88,7 @@ typedef NS_ENUM(NSUInteger, DiviceType) {
     iPad_Pro_129inch_2nd_gen_Cellular,
     iPad_Pro_105inch_WiFi,
     iPad_Pro_105inch_Cellular,
+    iPad_6,
     
     appleTV2,
     appleTV3,
@@ -229,6 +230,7 @@ typedef NS_ENUM(NSUInteger, DiviceType) {
     if ([machineString isEqualToString:@"iPad7,2"])     return iPad_Pro_129inch_2nd_gen_Cellular;
     if ([machineString isEqualToString:@"iPad7,3"])     return iPad_Pro_105inch_WiFi;
     if ([machineString isEqualToString:@"iPad7,4"])     return iPad_Pro_105inch_Cellular;
+    if ([machineString isEqualToString:@"iPad7,6"])     return iPad_6,
     
     if ([machineString isEqualToString:@"AppleTV2,1"])  return appleTV2;
     if ([machineString isEqualToString:@"AppleTV3,1"])  return appleTV3;
@@ -317,6 +319,7 @@ static const NSString *iDeviceNameContainer[] = {
     [iPad_Pro_129inch_2nd_gen_Cellular] = @"iPad Pro 12.9 inch(2nd generation)(Cellular)",
     [iPad_Pro_105inch_WiFi]             = @"iPad Pro 10.5 inch(WiFi)",
     [iPad_Pro_105inch_Cellular]         = @"iPad Pro 10.5 inch(Cellular)",
+    [iPad_6]                            = @"iPad 6",
     
     [appleTV2]                  = @"appleTV2",
     [appleTV3]                  = @"appleTV3",
@@ -397,6 +400,7 @@ static const NSUInteger BatteryCapacityContainer[] = {
     [iPad_5_Cellular]           = 8820,
     [iPad_Pro_105inch_WiFi]     = 8134,
     [iPad_Pro_105inch_Cellular] = 8134,
+    [iPad_6]                    = 8820,
     
     [iUnknown]                  = 0
 };
@@ -470,6 +474,7 @@ static const CGFloat BatteryVoltageContainer[] = {
     [iPad_5_Cellular]           = 3.73,
     [iPad_Pro_105inch_WiFi]     = 3.77,
     [iPad_Pro_105inch_Cellular] = 3.77,
+    [iPad_6]                    = 3.73,
     
     [iUnknown]                  = 0
 };
@@ -545,6 +550,7 @@ static const NSUInteger CPUFrequencyContainer[] = {
     [iPad_Pro_129inch_2nd_gen_Cellular] = 2380,
     [iPad_Pro_105inch_WiFi]             = 2380,
     [iPad_Pro_105inch_Cellular]         = 2380,
+    [iPad_6]                            = 2310,
     
     [iUnknown]                  = 0
 };
@@ -619,6 +625,7 @@ static const NSString *CPUNameContainer[] = {
     [iPad_Pro_129inch_2nd_gen_Cellular] = @"Apple A10X",
     [iPad_Pro_105inch_WiFi]             = @"Apple A10X",
     [iPad_Pro_105inch_Cellular]         = @"Apple A10X",
+    [iPad_6]                            = @"Apple A10",
     
     [iUnknown]                          = @"Unknown"
 };
@@ -694,6 +701,7 @@ static const NSString *initialFirmwareContainer[] = {
     [iPad_Pro_129inch_2nd_gen_Cellular] = @"10.3.2",
     [iPad_Pro_105inch_WiFi]             = @"10.3.2",
     [iPad_Pro_105inch_Cellular]         = @"10.3.2",
+    [iPad_6]                            = @"11.3",
     
     [iUnknown]                          = @"Unknown"
 };
