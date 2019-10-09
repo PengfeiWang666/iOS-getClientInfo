@@ -42,6 +42,9 @@ typedef NS_ENUM(NSUInteger, DiviceType) {
     iPhone_XS,
     iPhone_XS_Max,
     iPhone_XR,
+    iPhone_11,
+    iPhone_11_Pro,
+    iPhone_11_Pro_Max,
     
     iPod_Touch_1G,
     iPod_Touch_2G,
@@ -184,6 +187,9 @@ typedef NS_ENUM(NSUInteger, DiviceType) {
     if ([machineString isEqualToString:@"iPhone11,2"])  return iPhone_XS;
     if ([machineString isEqualToString:@"iPhone11,4"] || [machineString isEqualToString:@"iPhone11,6"])  return iPhone_XS_Max;
     if ([machineString isEqualToString:@"iPhone11,8"])  return iPhone_XR;
+    if ([machineString isEqualToString:@"iPhone12,1"])  return iPhone_11;
+    if ([machineString isEqualToString:@"iPhone12,3"])  return iPhone_11_Pro;
+    if ([machineString isEqualToString:@"iPhone12,5"])  return iPhone_11_Pro_Max;
     
     if ([machineString isEqualToString:@"iPod1,1"])     return iPod_Touch_1G;
     if ([machineString isEqualToString:@"iPod2,1"])     return iPod_Touch_2G;
@@ -230,7 +236,7 @@ typedef NS_ENUM(NSUInteger, DiviceType) {
     if ([machineString isEqualToString:@"iPad7,2"])     return iPad_Pro_129inch_2nd_gen_Cellular;
     if ([machineString isEqualToString:@"iPad7,3"])     return iPad_Pro_105inch_WiFi;
     if ([machineString isEqualToString:@"iPad7,4"])     return iPad_Pro_105inch_Cellular;
-    if ([machineString isEqualToString:@"iPad7,6"])     return iPad_6,
+    if ([machineString isEqualToString:@"iPad7,6"])     return iPad_6;
     
     if ([machineString isEqualToString:@"AppleTV2,1"])  return appleTV2;
     if ([machineString isEqualToString:@"AppleTV3,1"])  return appleTV3;
@@ -275,6 +281,9 @@ static const NSString *iDeviceNameContainer[] = {
     [iPhone_XS]                 = @"iPhone XS",
     [iPhone_XS_Max]             = @"iPhone XS Max",
     [iPhone_XR]                 = @"iPhone XR",
+    [iPhone_11]                 = @"iPhone 11",
+    [iPhone_11_Pro]             = @"iPhone 11 Pro",
+    [iPhone_11_Pro_Max]         = @"iPhone 11 Pro Max",
     
     [iPod_Touch_1G]             = @"iPod Touch 1G",
     [iPod_Touch_2G]             = @"iPod Touch 2G",
